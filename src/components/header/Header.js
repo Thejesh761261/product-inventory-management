@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../App.css';
 
 class Header extends React.Component {
     render() { 
@@ -14,9 +15,13 @@ class Header extends React.Component {
 
 
         return (  
-            <span>
-                <h1>Header</h1>
-            <h2>{this.props.children}</h2>
+            <div>
+            <nav className="navbar navbar-expand-sm navbar-light" style={{backgroundColor:'lightgray'}}>
+          <button className="navbar-brand" style={{height:'50px',border:'none',backgroundColor:'lightgray'}}>Home</button>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
                 <ul style={{listStyleType:'none'}}>
                     <li style={menuitem}>
                         <Link to="/" style={{ textDecoration:'none'}}>Home</Link>
@@ -31,7 +36,10 @@ class Header extends React.Component {
                         <Link to="/login" style={{ textDecoration:'none'}}>Login</Link>
                     </li>
                 </ul>
-            </span>
+                </div>
+                <a style={{color:'black',textDecoration:'none'}} tabIndex="-1" >Inventory Management</a>
+            </nav>
+            </div>
 
         );
     }

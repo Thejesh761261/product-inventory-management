@@ -2,37 +2,212 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+body {font-family: Arial, Helvetica, sans-serif;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+      
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          border: 1px solid #e7e7e7;
+          background-color: #f3f3f3;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a {
+          display: block;
+          color: #666;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        li  {
+            display: block;
+            color: #666;
+            text-align: center;
+           text-decoration: none;
+          }
+        
+        li a:hover:not(.active) {
+          background-color: #ddd;
+        }
+        li:hover:not(.active) {
+            background-color: #ddd;
+        }
+        
+        li a.active {
+          color: white;
+          background-color: #4CAF50;
+        }
+        li.active {
+            color: white;
+            background-color: #4CAF50;
+          }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+       .title{
+         margin-left:30%
+       }
+        .c1{
+            width:50%;
+            padding:3% 3% 0% 3%;
+            border: 3px solid #f1f1f1;
+            margin: 30px 30% 0 35%;
+        }
+        
+        .he1{
+            text-align: center;
+            color: #362F4B;
+        }
+        input[type=text], input[type=password], input[type=email], input[type=date], input[type=number] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+        
+        .l1 {
+          background-color: #4CAF50;
+          color: white;
+          padding: 14px 18px;
+          margin: 8px 0 8px 30%;
+          border: none;
+          cursor: pointer;
+          width: 40%;
+        }
+        
+        button:hover {
+          opacity: 0.8;
+        }
+        
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+        }
 
-.App-link {
-  color: #61dafb;
-}
+        .inp{
+            width: 10%;
+        }
+        
+        .f1 {
+          padding: 16px;
+        }
+        
+        .fpwd {
+          float: right;
+          margin-top:-10px;
+          /* padding: 30px; */
+        }
+    /*homepage*/
+    .sidebar {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+      position: fixed;
+      height: 100%;
+      overflow: auto;
+    }
+    
+    .sidebar a {
+      display: block;
+      color: black;
+      padding: 16px;
+      text-decoration: none;
+    }
+     
+    .sidebar p {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+      }
+     
+    .sidebar a.active {
+      background-color: #4CAF50;
+      color: white;
+    }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+    .sidebar p.active {
+        background-color: #4CAF50;
+        color: white;
+      }
+      
+    
+    .sidebar a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+    }
+
+    .sidebar p:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+  
+    /* Product details page */
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2}
+    
+    th {
+      background-color: #362F4B;
+      color: white;
+    }
+
+    .b1{
+      background-color: #4CAF51;
+      border:0;
+      border-radius: 10%;
+      padding: 5px;
+      width:50px;
+      color:white;
+      cursor: pointer;
+    }
+
+    .addB{
+      background-color: #4CAF51;
+      border:0;
+      border-radius: 10%;
+      padding: 10px;
+      width:100px;
+      color:white;
+      cursor: pointer;
+    }
+
+    .d1{
+      margin:20px
+    }
+
+    .search{
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 17px;
+      border: 1px solid gray;
+      border-radius: 25px;
+
+    }
+
+    /* Add products page */
+
+    .c2{
+      width:45%;
+      padding:3%;
+      /* border: 3px solid #f1f1f1; */
+      margin: 30px 0 0 10%;
+      columns: 2;
+    }
