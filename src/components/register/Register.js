@@ -2,8 +2,6 @@
 import React from 'react';
 import '../../App.css';
 import Header from '../header/Header';
-// import './App.css';
-
 import { Redirect } from 'react-router-dom';
 
 
