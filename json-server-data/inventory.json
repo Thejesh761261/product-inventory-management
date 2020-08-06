@@ -1,0 +1,232 @@
+{
+    "products": [
+     {
+       "id":1,
+       "code":"TEX123",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":2,
+       "code":"MRPI2",
+       "name":"Adidas Trousers",
+       "unitPrice":120.00,
+       "quantity":320,
+       "category":"Apprals",
+       "vendor":"SRM Traders",
+       "manufacturer":"Adidas"
+     },
+     {
+       "id":3,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":4,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":5,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":6,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":7,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":8,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":9,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":10,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":11,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":12,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":13,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":14,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     },
+     {
+       "id":15,
+       "code":"MRPI2",
+       "name":"Nike Trousers",
+       "unitPrice":200.00,
+       "quantity":300,
+       "category":"Apprals",
+       "vendor":"Saradha Traders",
+       "manufacturer":"Nike"
+     }
+      ],
+      "sales":[
+        {
+            "id":1,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":2,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":3,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":4,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":5,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":6,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":7,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        },
+        {
+            "id":8,
+          "date":"24-07-2015",
+          "total quantity":2104,
+          "total value":212000,
+          "apparals":230,
+          "footware":233,
+          "mobiles":234
+        }
+        ],
+    "object": {
+      "a": "b",
+      "c": "d"
+    }
+  }
