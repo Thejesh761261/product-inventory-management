@@ -2,6 +2,7 @@ import React from 'react';
 import Products from '../product/Products';
 import Dashboard from './Dashboard';
 import InventoryHeader from '../header/InventoryHeader';
+import SideNav from '../sideNavbar/Sidenav';
 import '../../App.css';
 
 class Homepage extends React.Component {
@@ -32,15 +33,10 @@ render()
     return (
         <div>
             <InventoryHeader></InventoryHeader>
-            <div className="sidebar">
-         <p onClick={this.sel.bind(this,'dashboard')}>Dashboard</p>
-            <p onClick={this.sel.bind(this,'productdetails')}>Product Details</p>
-            <p onClick={this.sel.bind(this,'news')}>News</p>
-            <p onClick={this.sel.bind(this,'contact')}>Contact</p>
-            <p onClick={this.sel.bind(this,'help')}>Help</p>
-          </div>
+            <SideNav></SideNav>
         <div className="container">
-           {this.comp()}
+           {/* {this.comp()} */}
+           <Dashboard></Dashboard>
         </div>
     </div>
        

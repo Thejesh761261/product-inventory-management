@@ -6,7 +6,6 @@ class Header extends React.Component {
     render() { 
         const menuitem = {
             color:"red",
-            backgroundColor:"pink",
             display:'inline',
             padding: '10px',
             margin: '5px'
@@ -17,17 +16,10 @@ class Header extends React.Component {
         return (  
             <div>
             <nav className="navbar navbar-expand-sm navbar-light" style={{backgroundColor:'lightgray'}}>
-          <button className="navbar-brand" style={{height:'50px',border:'none',backgroundColor:'lightgray'}}>Home</button>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
+            <div className="collapse navbar-collapse" id="navbarNav">
                 <ul style={{listStyleType:'none'}}>
                     <li style={menuitem}>
                         <Link to="/" style={{ textDecoration:'none'}}>Home</Link>
-                    </li>
-                    <li style={menuitem}>
-                        <Link to="/products" style={{ textDecoration:'none'}}>Products</Link>
                     </li>
                     <li style={menuitem}>
                         <Link to="/register" style={{ textDecoration:'none'}}>Register</Link>
@@ -35,8 +27,17 @@ class Header extends React.Component {
                     <li style={menuitem}>
                         <Link to="/login" style={{ textDecoration:'none'}}>Login</Link>
                     </li>
+                    <li style={menuitem}>
+                        <Link to="/products" style={{ textDecoration:'none'}}>News</Link>
+                    </li>
+                    <li style={menuitem}>
+                        <Link to="/products" style={{ textDecoration:'none'}}>About</Link>
+                    </li>
                 </ul>
-                </div>
+                </div>          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          
                 <a style={{color:'black',textDecoration:'none'}} tabIndex="-1" >Inventory Management</a>
             </nav>
             </div>
