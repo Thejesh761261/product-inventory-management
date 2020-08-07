@@ -4,7 +4,7 @@ import InventoryHeader from '../header/InventoryHeader';
 import SideNav from '../sideNavbar/Sidenav';
 import Axios from 'axios';
 
-class AddProduct extends React.Component {
+class EditProduct extends React.Component {
     state = { 
         pname:'',
         pcode:'',
@@ -77,7 +77,7 @@ class AddProduct extends React.Component {
     <div>
     <InventoryHeader></InventoryHeader>
     <SideNav></SideNav>
-    <h3 className="he1">Add Product</h3>
+    <h3 className="he1">Edit Product</h3>
     <hr/>
     <div className="c2">
     <form  style={{bottom:'0px'}}>
@@ -103,10 +103,10 @@ class AddProduct extends React.Component {
     <button type="submit" className="l1" onClick={this.addProduct}>Add Product</button>
     </form>
     </div>
-    { this.state.isSuccess && <h3>Product added successfully</h3>}
+    { this.state.isSuccess && <h3>Product edited successfully</h3>}
 </div>
           );
     }
 }
  
-export default AddProduct;
+export default EditProduct;

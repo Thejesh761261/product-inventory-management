@@ -4,6 +4,7 @@ import InventoryHeader from '../header/InventoryHeader';
 import SideNav from '../sideNavbar/Sidenav';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 class Products extends React.Component {
     state = { 
@@ -23,6 +24,23 @@ class Products extends React.Component {
           },error=>{
             console.log(error)
           })
+     }
+
+     deleteProduct=(event)=>{
+        console.log(event.target.id);
+        let id = event.target.id;
+        axios.delete('http://localhost:3000/products/'+id)
+          .then(response=>{
+            console.log("Deletion Success");
+            this.fetchProductDetails();
+          },error=>{
+            console.log("error occurred");
+          })
+     }
+
+     editHandler=()=>{
+       console.log("in edit handler");
+      return <Redirect to={{ pathname : "/editProduct" }} />
      }
     render() { 
         return ( 
@@ -65,8 +83,8 @@ class Products extends React.Component {
                   <td>{product.vendor}</td>
                   <td>${product.unitPrice}</td>
                   <td>{product.quantity}</td>
-                  <td><input type="button" value="Edit" className="b1"/></td>
-                  <td><input type="button" value="Delete" className="b1"/></td>
+                  <td><input type="button" id={product.id} value="Edit" className="b1" onClick={this.editHandler} /></td>
+                  <td><input type="button" id={product.id} value="Delete" className="b1" onClick={this.deleteProduct} /></td>
                 </tr>
                     )
                   })}

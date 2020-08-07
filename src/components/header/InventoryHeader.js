@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../App.css';
+import {Link} from 'react-router-dom';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 class InventoryHeader extends React.Component {
@@ -20,7 +21,7 @@ class InventoryHeader extends React.Component {
                         
             </ul>
     </div>
-    <a style={{color:'black',textDecoration:'none',float:'right'}} tabIndex="-1" > Logout</a>
+    <Link to="/login" ><p style={{color:'black',textDecoration:'none',float:'right'}} tabIndex="-1" > Logout</p></Link>
   </nav>
   
   </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import '../../App.css';
 import Header from '../header/Header';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
 
 
 const SIGNUP_SUCCESS = "Signup successful."
@@ -75,7 +76,7 @@ class Register extends React.Component {
             lastName: '',
             dob: '',
             mobile: '',
-            confirmpassword:''
+            confirmpassword:'',
         }
 
     }
@@ -122,12 +123,30 @@ class Register extends React.Component {
     render() {
         const hideiconstyle = this.state.hiddenPassword ? { display: 'none' } : {};
         const showiconstyle = !this.state.hiddenPassword ? { display: 'none' } : {};
-        if (this.state.signupSuccess)
-            return <Redirect to={{
-                pathname: "/inventory", state: {
-                    isLoggedIn: true
-                }
-            }} />
+        if (this.state.signupSuccess){
+            let data={
+                "email":this.state.email,
+                "password":this.state.password,
+                "name":this.state.firstName+" "+this.state.lastName,
+                "dob":this.state.dob,
+                "phone":this.state.phone
+
+            };
+            console.log(data);
+            axios.post('http://localhost:3000/login',data)
+                .then(resp=>{
+                    console.log(resp);
+                    return <Redirect to={{
+                        pathname: "/", state: {
+                            isLoggedIn: true
+                        }
+                    }} />
+                },error=>{
+                    console.log("error");
+                    console.log(error);
+                })
+            
+        }
 
 
         return (<React.Fragment>
@@ -156,9 +175,9 @@ class Register extends React.Component {
     <label htmlFor="conpwd"><b>Confirm Password</b></label>
     <input type="password" placeholder="Re-enter Password" name="conpwd" required onChange={this.handleConfirmPasswordChange.bind(this) } />
 
-    <label>
+    {/* <label>
         <input type="checkbox" checked="checked" name="remember" required /> I accept the <a href="#">terms and conditions</a>
-      </label>
+      </label> */}
         
     <button type="submit" className="l1">Signup</button>
     </form>

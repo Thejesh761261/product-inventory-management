@@ -2,16 +2,31 @@ import React from 'react';
 import Header from '../header/Header';
 import '../../App.css';
 import { Redirect } from 'react-router-dom';
+import Axios from 'axios';
 
 class Login extends React.Component{
     state={
         uname:'',
         pwd:'',
         loginSuccess:false,
+        details:[]
     }
+
+    componentDidMount(){
+        this.fetchDetails();
+    }
+    fetchDetails=()=>{
+        Axios.get("http://localhost:3000/login")
+            .then(response=>{
+                this.setState({details:response.data});
+            },error=>{
+                console.log(error);
+            })
+    }
+
     handleUserNameChange(e)
     {
-  this.setState({uname:e.target.value})
+        this.setState({uname:e.target.value})
     }
     handlePasswordChange(e)
     {
@@ -19,7 +34,13 @@ class Login extends React.Component{
     }
     submit(e)
     {
-    this.setState({loginSuccess:true})
+        // let temp=this.state.details.filter(detail=>{
+        //     return detail.email == this.state.uname && detail.password == this.state.password
+        // });
+        // if(temp.length!==0){
+        //     this.setState({loginSuccess:true})
+        // }
+        this.setState({loginSuccess:true})
     }
 render()
 {
@@ -55,7 +76,7 @@ render()
 
 
  <div className="f1" style={{backgroundcolor:"#f1f1f1"}}>
- <span className="fpwd">Forgot <a href="#">password?</a></span>
+ <span className="fpwd">Forgot password?</span>
  </div>   
   </form>
 
