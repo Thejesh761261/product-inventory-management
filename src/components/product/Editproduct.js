@@ -5,23 +5,43 @@ import SideNav from '../sideNavbar/Sidenav';
 import Axios from 'axios';
 
 class EditProduct extends React.Component {
+
     state = { 
         pname:'',
+        id:0,
         pcode:'',
         category:'',
         vendor:'',
-        price:'',
-        quantity:'',
+        price:0.0,
+        quantity:0,
         manufacturer:'',
         description:'',
         isSuccess:false
      }
+   
 
+     componentDidMount=()=>{
+         console.log(this.props.location.state.product[0])
+        this.setState({
+            pname:this.props.location.state.product[0].name,
+            id:this.props.location.state.product[0].id,
+            pcode:this.props.location.state.product[0].code,
+            category:this.props.location.state.product[0].category,
+            vendor:this.props.location.state.product[0].vendor,
+            price:this.props.location.state.product[0].unitPrice,
+            quantity:this.props.location.state.product[0].quantity,
+            manufacturer:this.props.location.state.product[0].manufacturer,
+            description:this.props.location.state.product[0].description
+        },()=>console.log(this.state))         
+        
+     }
      nameChangeHandler=(e)=>{
+         console.log(e.target.value)
         this.setState({pname : e.target.value});
      }
 
      codeChangeHandler=(e)=>{
+        console.log(e.target.value)
         this.setState({pcode : e.target.value});
      }
 
@@ -34,11 +54,11 @@ class EditProduct extends React.Component {
      }
 
      priceChangeHandler=(e)=>{
-       this.setState({price:e.target.price})
+       this.setState({price:e.target.value})
      }
 
      quantityChangeHandler=(e)=>{
-        this.setState({quantity:e.target.price})
+        this.setState({quantity:e.target.value})
       }
 
      manufacturerChangeHandler=(e)=>{
@@ -49,7 +69,9 @@ class EditProduct extends React.Component {
         this.setState({description:e.target.value})
      }
 
-     addProduct=()=>{
+     editProduct=(e)=>{
+         e.preventDefault();
+         console.log(this.state)
          let data={
              "code":this.state.pcode,
              "name":this.state.pname,
@@ -61,7 +83,7 @@ class EditProduct extends React.Component {
              "quantity":parseInt(this.state.quantity)
          }
 
-         Axios.post('http://localhost:3000/products',data)
+         Axios.put('http://localhost:3000/products/'+this.state.id,data)
             .then(response=>{
                 console.log(response);
                 this.setState({isSuccess:true});
@@ -82,25 +104,25 @@ class EditProduct extends React.Component {
     <div className="c2">
     <form  style={{bottom:'0px'}}>
     <label  ><b>Product Name</b></label>
-    <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />
+    <input type="text" placeholder="Enter Productname" name="pname" defaultValue={this.state.pname} required  onChange={this.nameChangeHandler} />
     <label ><b>Product Code</b></label>
-    <input type="text" placeholder="Enter ProductCode" name="pcode" required onChange={this.codeChangeHandler} />
+    <input type="text" placeholder="Enter ProductCode" name="pcode" value={this.state.pcode} required onChange={this.codeChangeHandler} />
      <label><b>Category</b></label>
-    <input type="text" placeholder="Category" name="category" required onChange={this.categoryChangeHandler} />
+    <input type="text" placeholder="Category" name="category" value={this.state.category} required onChange={this.categoryChangeHandler} />
     <label><b>Vendor</b></label>
-    <input type="text" placeholder="Enter Vendor name" name="vendor" required onChange={this.vendorChangeHandler} />
+    <input type="text" placeholder="Enter Vendor name" name="vendor" value={this.state.vendor} required onChange={this.vendorChangeHandler} />
     <label><b>Unit Price</b></label>
-    <input type="text" placeholder="Unit Price value" name="uprice" required onChange={this.priceChangeHandler} />
+    <input type="number" placeholder="Unit Price value" name="uprice" value={this.state.price} required onChange={this.priceChangeHandler} />
     <label><b>Quantity</b></label>
-    <input type="text" placeholder="Initial Quantity" name="quantity" required onChange={this.quantityChangeHandler} />
+    <input type="number" placeholder="Initial Quantity" name="quantity" value={this.state.quantity} required onChange={this.quantityChangeHandler} />
 
     <label ><b>Manufacturer</b></label>
-    <input type="text" placeholder="Enter Manufacturer name" name="manufacturer" required onChange={this.manufacturerChangeHandler} />
+    <input type="text" placeholder="Enter Manufacturer name" name="manufacturer" value={this.state.manufacturer} required onChange={this.manufacturerChangeHandler} />
 
     <label ><b>Description</b></label>
-    <input type="text" placeholder="Enter Description" name="desc" required onChange={this.descChangeHandler} />
+    <input type="text" placeholder="Enter Description" name="desc" value={this.state.description} required onChange={this.descChangeHandler} />
         
-    <button type="submit" className="l1" onClick={this.addProduct}>Add Product</button>
+    <button type="submit" className="l1" onClick={this.editProduct}>Edit Product</button>
     </form>
     </div>
     { this.state.isSuccess && <h3>Product edited successfully</h3>}

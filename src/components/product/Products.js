@@ -8,7 +8,9 @@ import { Redirect } from "react-router-dom";
 
 class Products extends React.Component {
     state = { 
-        products:[]
+        products:[],
+        editId:0,
+        editClicked:false
      }
 
      componentDidMount(){
@@ -38,11 +40,20 @@ class Products extends React.Component {
           })
      }
 
-     editHandler=()=>{
+     editHandler=(e)=>{
        console.log("in edit handler");
-      return <Redirect to={{ pathname : "/editProduct" }} />
+       this.setState({editId:e.target.id});
+      this.setState({editClicked:true})
      }
     render() { 
+
+      if(this.state.editClicked){
+        this.setState({editClicked:false})
+        console.log()
+        return <Redirect to={{pathname:"/editProduct" ,state:{
+          product:this.state.products.filter(p=>p.id==this.state.editId)
+        }}}></Redirect>
+      }
         return ( 
             <div  >
             

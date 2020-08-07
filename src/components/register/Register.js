@@ -10,10 +10,6 @@ const SIGNUP_SUCCESS = "Signup successful."
 
 const SIGNUP_ERROR = "Please try again later."
 
-const MAX_DATE = "2010-12-31"
-
-const MIN_DATE = "1979-12-31"
-
 function passwordValidate(pass) {
     const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#/$%/^&/*])(?=.{8,})");
     if (strongRegex.test(pass)) {
@@ -77,6 +73,8 @@ class Register extends React.Component {
             dob: '',
             mobile: '',
             confirmpassword:'',
+            error:false,
+            errors:[]
         }
 
     }
@@ -115,38 +113,44 @@ class Register extends React.Component {
      
         handleSubmit(event)
         {
-           this.setState({signupSuccess:true})
+            event.preventDefault();
+            const errors=validate(this.state);
+            this.setState({errors:errors});
+            if(errors.length>0){
+                console.log("errors")
+                console.log(errors);
+                this.setState({error:true});
+            }else{
+                console.log("success")
+                this.setState({signupSuccess:true})
+                let data={
+                    "email":this.state.email,
+                    "password":this.state.password,
+                    "name":this.state.firstName+" "+this.state.lastName,
+                    "dob":this.state.dob,
+                    "phone":this.state.phone
+    
+                };
+                console.log(data);
+                axios.post('http://localhost:3000/login',data)
+                    .then(resp=>{
+                        console.log(resp);
+                        return <Redirect to={{
+                            pathname: "/", state: {
+                                isLoggedIn: true
+                            }
+                        }} />
+                    },error=>{
+                        console.log("error");
+                        console.log(error);
+                    })
+            }
+          
         }
 
     
 
     render() {
-        const hideiconstyle = this.state.hiddenPassword ? { display: 'none' } : {};
-        const showiconstyle = !this.state.hiddenPassword ? { display: 'none' } : {};
-        if (this.state.signupSuccess){
-            let data={
-                "email":this.state.email,
-                "password":this.state.password,
-                "name":this.state.firstName+" "+this.state.lastName,
-                "dob":this.state.dob,
-                "phone":this.state.phone
-
-            };
-            console.log(data);
-            axios.post('http://localhost:3000/login',data)
-                .then(resp=>{
-                    console.log(resp);
-                    return <Redirect to={{
-                        pathname: "/", state: {
-                            isLoggedIn: true
-                        }
-                    }} />
-                },error=>{
-                    console.log("error");
-                    console.log(error);
-                })
-            
-        }
 
 
         return (<React.Fragment>
@@ -155,7 +159,7 @@ class Register extends React.Component {
 
     <h3 className="he1">User Signup</h3>
     <hr/>
-    <form onSubmit={this.handleSubmit.bind(this)}  style={{bottom:'0px'}}>
+    <form onSubmit={this.handleSubmit.bind(this)}  style={{bottom:'0px'}} noValidate>
     <label htmlFor="fname" ><b>First Name</b></label>
     <input type="text" placeholder="Enter Firstname" name="fname" required  onChange={this.handleFirstNameChange.bind(this) }/>
     <label htmlFor="lname"><b>Last Name</b></label>
@@ -178,7 +182,9 @@ class Register extends React.Component {
     {/* <label>
         <input type="checkbox" checked="checked" name="remember" required /> I accept the <a href="#">terms and conditions</a>
       </label> */}
-        
+
+        {this.state.error===true && (<div className="alert-danger">{this.state.errors}</div>)}
+        {this.state.signupSuccess===true && (<div className="alert alert-success">Signup Success! Please Login</div>)}
     <button type="submit" className="l1">Signup</button>
     </form>
 </div>

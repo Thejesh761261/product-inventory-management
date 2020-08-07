@@ -10,8 +10,8 @@ class AddProduct extends React.Component {
         pcode:'',
         category:'',
         vendor:'',
-        price:'',
-        quantity:'',
+        price:0.0,
+        quantity:0,
         manufacturer:'',
         description:'',
         isSuccess:false
@@ -34,11 +34,12 @@ class AddProduct extends React.Component {
      }
 
      priceChangeHandler=(e)=>{
-       this.setState({price:e.target.price})
+         console.log(e);
+       this.setState({price:e.target.value});
      }
 
      quantityChangeHandler=(e)=>{
-        this.setState({quantity:e.target.price})
+        this.setState({quantity:e.target.value});
       }
 
      manufacturerChangeHandler=(e)=>{
@@ -49,7 +50,9 @@ class AddProduct extends React.Component {
         this.setState({description:e.target.value})
      }
 
-     addProduct=()=>{
+     addProduct=(e)=>{
+         e.preventDefault();
+         console.log(this.state);
          let data={
              "code":this.state.pcode,
              "name":this.state.pname,
@@ -60,6 +63,8 @@ class AddProduct extends React.Component {
              "description":this.state.description,
              "quantity":parseInt(this.state.quantity)
          }
+
+         console.log(data);
 
          Axios.post('http://localhost:3000/products',data)
             .then(response=>{
@@ -79,7 +84,9 @@ class AddProduct extends React.Component {
     <SideNav></SideNav>
     <h3 className="he1">Add Product</h3>
     <hr/>
+   
     <div className="c2">
+    { this.state.isSuccess && (<h3 alert alert-sucess>Product added successfully</h3>) }
     <form  style={{bottom:'0px'}}>
     <label  ><b>Product Name</b></label>
     <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />
@@ -100,10 +107,10 @@ class AddProduct extends React.Component {
     <label ><b>Description</b></label>
     <input type="text" placeholder="Enter Description" name="desc" required onChange={this.descChangeHandler} />
         
-    <button type="submit" className="l1" onClick={this.addProduct}>Add Product</button>
+    <button type="submit" className="l1" onClick={this.addProduct.bind(this)}>Add Product</button>
     </form>
     </div>
-    { this.state.isSuccess && <h3>Product added successfully</h3>}
+   
 </div>
           );
     }

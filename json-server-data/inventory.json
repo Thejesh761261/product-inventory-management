@@ -1,15 +1,15 @@
 {
   "products": [
     {
-      "id": 3,
       "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
+      "name": "Ths Trousers",
       "category": "Apprals",
       "vendor": "Saradha Traders",
+      "unitPrice": 200,
       "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 3
     },
     {
       "id": 4,
@@ -109,6 +109,83 @@
       "vendor": "Saradha Traders",
       "manufacturer": "Nike",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
+    },
+    {
+      "code": "HIG231",
+      "name": "Highlander Trousers",
+      "category": "Apparals",
+      "vendor": "AJIO",
+      "unitPrice": 234,
+      "manufacturer": "Ajio",
+      "description": "learn react",
+      "quantity": 123,
+      "id": 17
+    },
+    {
+      "code": "MRPI2",
+      "name": "Thejesh Trousers",
+      "category": "Apprals",
+      "vendor": "Saradha Traders",
+      "unitPrice": 20,
+      "manufacturer": "Nike",
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 18
+    },
+    {
+      "code": "MRPI2",
+      "name": "NikeersEREEEE",
+      "category": "Apprals",
+      "vendor": "Saradha Traders",
+      "unitPrice": 200,
+      "manufacturer": "Nike",
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 19
+    },
+    {
+      "code": "MRPI2",
+      "name": "Nikeers",
+      "category": "Apprals",
+      "vendor": "Saradha Traders",
+      "unitPrice": 200,
+      "manufacturer": "Nike",
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 20
+    },
+    {
+      "code": "MRPI2",
+      "name": "Nike ",
+      "category": "Apprals",
+      "vendor": "Saradha Traders",
+      "unitPrice": 200,
+      "manufacturer": "Nike",
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 21
+    },
+    {
+      "code": "M",
+      "name": "Nike Trousers",
+      "category": "Apprals",
+      "vendor": "Saradha Traders",
+      "unitPrice": 200,
+      "manufacturer": "Nike",
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 22
+    },
+    {
+      "code": "MRP",
+      "name": "Nike Trou",
+      "category": "Apprals",
+      "vendor": "Saradha Traders",
+      "unitPrice": 200,
+      "manufacturer": "Nike",
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 300,
+      "id": 23
     }
   ],
   "sales": [
