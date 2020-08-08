@@ -84,9 +84,11 @@ class AddProduct extends React.Component {
     <SideNav></SideNav>
     <h3 className="he1">Add Product</h3>
     <hr/>
+    <div style={{textAlign:"center"}}>
+        { this.state.isSuccess && (<h3 className="alert-sucess" style={{backgroundColor:"green",color:"white"}}>Product edited successfully</h3>) }
+    </div>
    
     <div className="c2">
-    { this.state.isSuccess && (<h3 alert alert-sucess>Product added successfully</h3>) }
     <form  style={{bottom:'0px'}}>
     <label  ><b>Product Name</b></label>
     <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />

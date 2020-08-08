@@ -134,17 +134,6 @@
     },
     {
       "code": "MRPI2",
-      "name": "NikeersEREEEE",
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "unitPrice": 200,
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
-      "quantity": 300,
-      "id": 19
-    },
-    {
-      "code": "MRPI2",
       "name": "Nikeers",
       "category": "Apprals",
       "vendor": "Saradha Traders",
@@ -177,15 +166,26 @@
       "id": 22
     },
     {
-      "code": "MRP",
-      "name": "Nike Trou",
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "unitPrice": 200,
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
-      "quantity": 300,
+      "code": "HIGL2014",
+      "name": "Highlander Trousers",
+      "category": "Trousers",
+      "vendor": "Mahin Fashions",
+      "unitPrice": 234,
+      "manufacturer": "Highlander",
+      "description": "Mens Trousers red strip",
+      "quantity": 230,
       "id": 23
+    },
+    {
+      "code": "RBK231",
+      "name": "Reebok Tshirt",
+      "category": "TShirt",
+      "vendor": "Suha ",
+      "unitPrice": 1200,
+      "manufacturer": "Reebok",
+      "description": "Reebok Tshirt for men",
+      "quantity": 23,
+      "id": 24
     }
   ],
   "sales": [

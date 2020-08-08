@@ -35,7 +35,7 @@ class Header extends React.Component {
                         <Link to="" style={{ textDecoration:'none'}}>About</Link>
                     </li>
                 </ul>
-                </div>          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                </div>          <button className="navbar-toggler" type="button" data-toggle="collapse"  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           

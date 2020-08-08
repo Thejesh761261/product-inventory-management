@@ -9,8 +9,10 @@ import { Redirect } from "react-router-dom";
 class Products extends React.Component {
     state = { 
         products:[],
+        tempProducts:[],
         editId:0,
-        editClicked:false
+        editClicked:false,
+        searchValue:''
      }
 
      componentDidMount(){
@@ -22,7 +24,8 @@ class Products extends React.Component {
           .then(response=>{
             console.log(response.data);
             this.setState({products:response.data});
-            console.log(this.state.products);
+            this.setState({tempProducts:response.data});
+            console.log(this.state.tempProducts);
           },error=>{
             console.log(error)
           })
@@ -45,6 +48,23 @@ class Products extends React.Component {
        this.setState({editId:e.target.id});
       this.setState({editClicked:true})
      }
+
+     search=(e)=>{
+        let value=e.target.value;
+        if(value==''){
+          this.fetchProductDetails();
+          
+        }
+        else{
+        this.setState({searchValue: value});
+        let searchProd=this.state.tempProducts.filter(p=>{
+          return p.name.toLowerCase().match(value.toLowerCase())||p.vendor.toLowerCase().match(value.toLowerCase())||p.category.toLowerCase().match(value.toLowerCase());
+        })
+        this.setState({products:searchProd});
+      }
+
+     }
+
     render() { 
 
       if(this.state.editClicked){
@@ -61,8 +81,6 @@ class Products extends React.Component {
         <InventoryHeader></InventoryHeader>
             <SideNav></SideNav>
             <div className="container">
-        {/* <h2 style={{zindex: '3',marginleft:'15%'}} className="he1">Product Details</h2>
-        <hr></hr> */}
         <div > 
             <span>
                 <h2 className="he1">Product Details</h2>
@@ -70,14 +88,17 @@ class Products extends React.Component {
             </span>
             <span style={{display: 'block',margin: '30px'}}>
                 Product search &nbsp;
-                <input type="search"  placeholder="Search....." className="search" />
+                <input type="search"  placeholder="Search....."  className="search" onChange={this.search} />
+                <button className="btn btn-info">Toggle View</button>
                 <Link to="/addProduct"><button className="addB" >Add Product</button></Link>
             </span>
         </div>
         <div className="d1">
             <table>
+              <thead>
                 <tr>
                   <th>Product Name</th>
+                  <th>Manufacturer</th>
                   <th>Category</th>
                   <th>Vendor</th>
                   <th>Price per unit</th>
@@ -85,11 +106,14 @@ class Products extends React.Component {
                   <th></th>
                   <th></th>
                 </tr>
+              </thead>
+              <tbody>
                   {this.state.products.map(product=>{
                     return (
                       <tr>
                  
                   <td>{product.name}</td>
+                  <td>{product.manufacturer}</td>
                   <td>{product.category}</td>
                   <td>{product.vendor}</td>
                   <td>${product.unitPrice}</td>
@@ -97,10 +121,11 @@ class Products extends React.Component {
                   <td><input type="button" id={product.id} value="Edit" className="b1" onClick={this.editHandler} /></td>
                   <td><input type="button" id={product.id} value="Delete" className="b1" onClick={this.deleteProduct} /></td>
                 </tr>
+             
                     )
                   })}
                 
-               
+                </tbody>
               </table>
             </div>
         </div>

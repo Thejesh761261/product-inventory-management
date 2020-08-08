@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Sidenav extends React.Component {
     state = {  }
@@ -8,9 +8,9 @@ class Sidenav extends React.Component {
             <div className="sidebar">
                 <Link to="/"><p >Dashboard</p></Link> 
                 <Link to="/products"><p>Product Details</p></Link>
-               <p >News</p>
-               <p >Contact</p>
-               <p >Help</p>
+               <Link to=""><p >News</p></Link>
+               <Link to=""><p >Contact</p></Link>
+              
              </div>
             
         );

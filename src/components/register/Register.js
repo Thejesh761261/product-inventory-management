@@ -180,7 +180,7 @@ class Register extends React.Component {
     <input type="password" placeholder="Re-enter Password" name="conpwd" required onChange={this.handleConfirmPasswordChange.bind(this) } />
 
     {/* <label>
-        <input type="checkbox" checked="checked" name="remember" required /> I accept the <a href="#">terms and conditions</a>
+        <input type="checkbox" checked="checked" name="remember" required /> I accept the <p>terms and conditions</a>
       </label> */}
 
         {this.state.error===true && (<div className="alert-danger">{this.state.errors}</div>)}

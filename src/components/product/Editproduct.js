@@ -21,7 +21,12 @@ class EditProduct extends React.Component {
    
 
      componentDidMount=()=>{
+        
+        
          console.log(this.props.location.state.product[0])
+        //  if(this.props.location.state.product===undefined){
+        //     return (<h1>404</h1>)
+        // }
         this.setState({
             pname:this.props.location.state.product[0].name,
             id:this.props.location.state.product[0].id,
@@ -101,6 +106,9 @@ class EditProduct extends React.Component {
     <SideNav></SideNav>
     <h3 className="he1">Edit Product</h3>
     <hr/>
+    <div style={{textAlign:"center"}}>
+        { this.state.isSuccess && (<h3 className="alert-sucess" style={{backgroundColor:"green",color:"white"}}>Product edited successfully</h3>) }
+    </div>
     <div className="c2">
     <form  style={{bottom:'0px'}}>
     <label  ><b>Product Name</b></label>
@@ -125,7 +133,6 @@ class EditProduct extends React.Component {
     <button type="submit" className="l1" onClick={this.editProduct}>Edit Product</button>
     </form>
     </div>
-    { this.state.isSuccess && <h3>Product edited successfully</h3>}
 </div>
           );
     }
