@@ -10,7 +10,8 @@ class Dashboard extends React.Component{
         products:[],
         chart1:[
             ["category","quantity"]
-        ]
+        ],
+        categories:[]
     }
 
     componentDidMount=()=>{
@@ -21,11 +22,32 @@ class Dashboard extends React.Component{
         axios.get('http://localhost:3000/products')
             .then(response=>{
             console.log(response.data);
-            this.setState({products:response.data},()=>{
-                this.state.products.map(p=>{
-                    this.state.chart1.push([p.category,p.quantity])
-                })
-            });
+            this.setState({products:response.data});
+            response.data.map(p=>{
+                this.state.categories.push(p.category)
+            })
+           let arr= this.state.categories.filter((value, index, self) => self.indexOf(value) === index)
+           console.log(arr);
+        //    this.setState({categories:arr});
+        arr.map(c=>{
+            console.log(c)
+            let quantity=[];
+            quantity=this.state.products.filter(p=>p.category===c)
+            console.log(quantity);
+            let temp=0;
+            let sum=quantity.map(q=>{
+                 temp=q.quantity+temp;
+            },0);
+
+            this.state.chart1.push([c,parseInt(temp)]);
+        })
+        console.log(this.state.chart1)
+
+            // this.setState({products:response.data},()=>{
+            //     this.state.products.map(p=>{
+            //         this.state.chart1.push([p.category,p.quantity])
+            //     })
+            // });
             console.log(this.state.chart1);
             console.log(this.state.products);
             },error=>{
@@ -37,13 +59,21 @@ class Dashboard extends React.Component{
     {
         return(
              <div>
-            <h2 style={{zindex: '3',marginleft:'15%'}} className="he1">Sales Analysis</h2>
+            <h2 style={{zindex: '3',marginleft:'15%'}} className="he1">Inventory Dashboard</h2>
             <hr/>
-            <img src={stat} alt="img" style={{height:' 80%',width: '80%',marginleft: '15%',margintop: '-5%',zindex: '0'}} />
+            {/* <img src={stat} alt="img" style={{height:' 80%',width: '80%',marginleft: '15%',margintop: '-5%',zindex: '0'}} /> */}
             <div className={"my-pretty-chart-container"}>
         <Chart
           chartType="Bar"
+          loader={<div>Loading Chart</div>}
           data={this.state.chart1}
+          options={{
+            // Material design options
+            chart: {
+              title: 'Present available quantity ',
+              subtitle: 'Present inventory quantity'
+            },
+          }}
           width="100%"
           height="400px"
           legendToggle
