@@ -1,9 +1,9 @@
 {
   "products": [
     {
-      "code": "MRPI2",
-      "name": "Ths Trousers",
-      "category": "Apprals",
+      "code": "NIKE234",
+      "name": "Nike Trousers",
+      "category": "Trousers",
       "vendor": "Saradha Traders",
       "unitPrice": 200,
       "manufacturer": "Nike",
@@ -13,102 +13,47 @@
     },
     {
       "id": 4,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
+      "code": "PUMA435",
+      "name": "Puma Trousers",
       "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
+      "quantity": 200,
+      "category": "Trousers",
       "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
-    },
-    {
-      "id": 6,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
-    },
-    {
-      "id": 7,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
-    },
-    {
-      "id": 8,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
+      "manufacturer": "PUMA",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
     },
     {
       "id": 9,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
+      "code": "AVA512",
+      "name": "Avasaa kurta",
       "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
+      "quantity": 20,
+      "category": "Kurtas",
       "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
-    },
-    {
-      "id": 10,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
-    },
-    {
-      "id": 11,
-      "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
-      "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
+      "manufacturer": "AVASAA",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
     },
     {
       "id": 12,
-      "code": "MRPI2",
+      "code": "AVA234",
       "name": "Nike Trousers",
       "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
+      "quantity": 1234,
+      "category": "Kurtas",
       "vendor": "Saradha Traders",
-      "manufacturer": "Nike",
+      "manufacturer": "Manyavar",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
     },
     {
-      "id": 13,
       "code": "MRPI2",
-      "name": "Nike Trousers",
-      "unitPrice": 200,
-      "quantity": 300,
-      "category": "Apprals",
+      "name": "Nike Trousers Updated",
+      "category": "Apparals",
       "vendor": "Saradha Traders",
+      "unitPrice": 200,
       "manufacturer": "Nike",
-      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew"
+      "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
+      "quantity": 123,
+      "id": 13
     },
     {
       "code": "HIG231",
@@ -118,7 +63,7 @@
       "unitPrice": 234,
       "manufacturer": "Ajio",
       "description": "learn react",
-      "quantity": 123,
+      "quantity": 23,
       "id": 17
     },
     {
@@ -129,40 +74,40 @@
       "unitPrice": 20,
       "manufacturer": "Nike",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
-      "quantity": 300,
+      "quantity": 44,
       "id": 18
     },
     {
       "code": "MRPI2",
       "name": "Nikeers",
-      "category": "Apprals",
+      "category": "Apparals",
       "vendor": "Saradha Traders",
       "unitPrice": 200,
       "manufacturer": "Nike",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
-      "quantity": 300,
+      "quantity": 21,
       "id": 20
     },
     {
       "code": "MRPI2",
       "name": "Nike ",
-      "category": "Apprals",
+      "category": "Apparals",
       "vendor": "Saradha Traders",
       "unitPrice": 200,
       "manufacturer": "Nike",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
-      "quantity": 300,
+      "quantity": 23,
       "id": 21
     },
     {
       "code": "M",
       "name": "Nike Trousers",
-      "category": "Apprals",
+      "category": "Apparals",
       "vendor": "Saradha Traders",
       "unitPrice": 200,
       "manufacturer": "Nike",
       "description": "lorem ipsum asas jhsfsf sdfjywewe aeew",
-      "quantity": 300,
+      "quantity": 21,
       "id": 22
     },
     {
@@ -173,7 +118,7 @@
       "unitPrice": 234,
       "manufacturer": "Highlander",
       "description": "Mens Trousers red strip",
-      "quantity": 230,
+      "quantity": 22,
       "id": 23
     },
     {
@@ -184,8 +129,19 @@
       "unitPrice": 1200,
       "manufacturer": "Reebok",
       "description": "Reebok Tshirt for men",
-      "quantity": 23,
+      "quantity": 54,
       "id": 24
+    },
+    {
+      "code": "PUM4123",
+      "name": "Puma TShirt",
+      "category": "TShirt",
+      "vendor": "AMS",
+      "unitPrice": 134,
+      "manufacturer": "PUMA",
+      "description": "PUMA Tshirt",
+      "quantity": 512,
+      "id": 25
     }
   ],
   "sales": [
@@ -276,60 +232,18 @@
       "phone": "9897656789"
     },
     {
-      "email": "",
-      "password": "asa",
-      "name": "Thejesh sasas",
+      "email": "thejesh@gmail.com",
+      "password": "thejesh",
+      "name": "Thejesh Kanuparthi",
       "dob": "2020-08-11",
       "id": 2
     },
     {
-      "email": "",
-      "password": "asa",
-      "name": "Thejesh sasas",
-      "dob": "2020-08-11",
+      "email": "swathi@gmail.com",
+      "password": "swathi123",
+      "name": "Swathi S",
+      "dob": "2020-05-07",
       "id": 3
-    },
-    {
-      "email": "",
-      "password": "sdd",
-      "name": "ddda sdsdsd",
-      "dob": "2020-08-18",
-      "id": 4
-    },
-    {
-      "email": "",
-      "password": "sdd",
-      "name": "ddda sdsdsd",
-      "dob": "2020-08-18",
-      "id": 5
-    },
-    {
-      "email": "",
-      "password": "wqwq",
-      "name": "ddda sdsdsd",
-      "dob": "2020-08-04",
-      "id": 6
-    },
-    {
-      "email": "",
-      "password": "wqwq",
-      "name": "ddda sdsdsd",
-      "dob": "2020-08-04",
-      "id": 7
-    },
-    {
-      "email": "",
-      "password": "ZZ",
-      "name": "ddda sdsdsd",
-      "dob": "2020-08-06",
-      "id": 8
-    },
-    {
-      "email": "",
-      "password": "ZZ",
-      "name": "ddda sdsdsd",
-      "dob": "2020-08-06",
-      "id": 9
     }
   ]
 }

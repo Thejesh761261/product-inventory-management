@@ -14,7 +14,24 @@ class AddProduct extends React.Component {
         quantity:0,
         manufacturer:'',
         description:'',
-        isSuccess:false
+        isSuccess:false,
+        categories:[]
+     }
+
+     componentDidMount=()=>{
+        Axios.get('http://localhost:3000/products')
+            .then(response=>{
+                console.log(response);
+              response.data.map(p=>{
+                  this.state.categories.push(p.category)
+              })
+             let arr= this.state.categories.filter((value, index, self) => self.indexOf(value) === index)
+             this.setState({categories:arr});
+              console.log(arr);  
+
+            },error=>{
+                console.log(error);
+            })
      }
 
      nameChangeHandler=(e)=>{
@@ -70,6 +87,7 @@ class AddProduct extends React.Component {
             .then(response=>{
                 console.log(response);
                 this.setState({isSuccess:true});
+
             },error=>{
                 console.log(error);
             })
@@ -94,8 +112,15 @@ class AddProduct extends React.Component {
     <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />
     <label ><b>Product Code</b></label>
     <input type="text" placeholder="Enter ProductCode" name="pcode" required onChange={this.codeChangeHandler} />
-     <label><b>Category</b></label>
-    <input type="text" placeholder="Category" name="category" required onChange={this.categoryChangeHandler} />
+    <label htmlFor="category"><b>Category</b></label>
+    <select name="Category" id="category" className="form-control" onChange={this.categoryChangeHandler}>
+    {this.state.categories.map((s, i) => (
+        <option key={i} defaultValue=' ' value={s}>
+        {s}
+        </option>
+        ))}
+</select><br></br>
+    {/* <input type="select" placeholder="Category" name="category" required onChange={this.categoryChangeHandler} /> */}
     <label><b>Vendor</b></label>
     <input type="text" placeholder="Enter Vendor name" name="vendor" required onChange={this.vendorChangeHandler} />
     <label><b>Unit Price</b></label>

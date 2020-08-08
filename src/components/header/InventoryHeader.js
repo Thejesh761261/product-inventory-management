@@ -7,7 +7,7 @@ class InventoryHeader extends React.Component {
     state = {  }
     render() { 
         return ( 
-            <div>
+            <div className="inventoryHeader">
       
       <nav className="navbar navbar-expand-sm navbar-light" style={{backgroundColor:'lightgray',height:"20%"}}>
     <button className="navbar-brand" style={{height:'50px',border:'none',backgroundColor:'lightgray',float:'left'}}>Inventory Management</button>
@@ -16,7 +16,7 @@ class InventoryHeader extends React.Component {
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="nav navbar-nav"  style={{backgroundColor:'lightgray',border:'none'}}>
-              <li>Welcome!!!</li>
+        <li>Welcome {sessionStorage.getItem('loggedInUser')}!!!</li>
                       
                         
             </ul>

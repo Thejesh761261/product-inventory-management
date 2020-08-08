@@ -9,14 +9,15 @@ class Login extends React.Component{
         uname:'',
         pwd:'',
         loginSuccess:false,
-        details:[]
+        details:[],
+        error:false
     }
 
     componentDidMount(){
         this.fetchDetails();
     }
     fetchDetails=()=>{
-        Axios.get("http://localhost:3000/login")
+        Axios.get("http://localhost:3000/login/")
             .then(response=>{
                 this.setState({details:response.data});
             },error=>{
@@ -34,13 +35,26 @@ class Login extends React.Component{
     }
     submit(e)
     {
-        // let temp=this.state.details.filter(detail=>{
-        //     return detail.email == this.state.uname && detail.password == this.state.password
-        // });
-        // if(temp.length!==0){
-        //     this.setState({loginSuccess:true})
-        // }
-        this.setState({loginSuccess:true})
+        e.preventDefault();
+        console.log(this.state.details.length)
+        let temp=this.state.details.filter(detail=>{
+            if(detail.email === this.state.uname && detail.password === this.state.pwd)
+            {
+                sessionStorage.setItem("loggedInUser",detail.name);
+                return detail;
+            }
+                
+            
+        });
+        console.log(temp.length);
+        if(temp.length!==0){
+            console.log("login success")
+            this.setState({loginSuccess:true})
+
+        }else{
+            this.setState({error:true});
+        }
+        // this.setState({loginSuccess:true})
     }
 render()
 {
@@ -58,9 +72,9 @@ render()
   <Header></Header>
   </div >
 <div className="container c1" style={{width:'30%',align:'center'}}>
-
 <h2 className="he1">User Login</h2>
 <hr/>
+{this.state.error && (<h4 className="alert alert-danger">Please enter valid username and password</h4>)}
 <form onSubmit={this.submit.bind(this)}>
     <label htmlFor="uname"><b>Username</b></label><br/>
  <input type="text" className="inp" placeholder="Enter Username" name="uname" required onChange={this.handleUserNameChange.bind(this)}/><br/>

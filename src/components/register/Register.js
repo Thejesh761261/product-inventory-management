@@ -6,21 +6,24 @@ import { Redirect } from 'react-router-dom';
 import axios from 'axios';
 
 
-const SIGNUP_SUCCESS = "Signup successful."
+// const SIGNUP_SUCCESS = "Signup successful."
 
-const SIGNUP_ERROR = "Please try again later."
+// const SIGNUP_ERROR = "Please try again later."
 
-function passwordValidate(pass) {
-    const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#/$%/^&/*])(?=.{8,})");
-    if (strongRegex.test(pass)) {
-        return false;
-    }
-    else {
-        return true;
-    }
-}
+// function passwordValidate(pass) {
+//     const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#/$%/^&/*])(?=.{8,})");
+//     if (strongRegex.test(pass)) {
+//         return false;
+//     }
+//     else {
+//         return true;
+//     }
+// }
+// || passwordValidate(state.password)
 
 function validate(state) {
+    console.log("in errors");
+    console.log(state);
     const errors = [];
   
     if (state.firstName === "") {
@@ -39,6 +42,10 @@ function validate(state) {
 
         errors.push("Mobile Number is required")
     }
+    if (state.mobile.length < 10 || state.mobile.length > 10) {
+
+        errors.push("Mobile Number should be of 10 digits")
+    }
     if (state.email.length < 5) {
 
         errors.push("Email should be at least 5 charcters long");
@@ -52,9 +59,14 @@ function validate(state) {
         errors.push("Email should contain at least one dot");
     }
 
-    if (state.password.length < 6 || passwordValidate(state.password)) {
+    if (state.password.length < 6 ) {
 
         errors.push("Password should be at least 6 characters long");
+    }
+
+    if (state.password !== state.confirmpassword ) {
+
+        errors.push("Password and Confirm password should be same");
     }
 
     return errors;
@@ -79,6 +91,7 @@ class Register extends React.Component {
 
     }
     handleEmailChange = (eve) => {
+        console.log(eve.target.value)
         this.setState({ email: eve.target.value });
     }
     handlePasswordChange = (e) => {
@@ -160,30 +173,30 @@ class Register extends React.Component {
     <h3 className="he1">User Signup</h3>
     <hr/>
     <form onSubmit={this.handleSubmit.bind(this)}  style={{bottom:'0px'}} noValidate>
-    <label htmlFor="fname" ><b>First Name</b></label>
+    <label><b>First Name</b></label>
     <input type="text" placeholder="Enter Firstname" name="fname" required  onChange={this.handleFirstNameChange.bind(this) }/>
-    <label htmlFor="lname"><b>Last Name</b></label>
+    <label><b>Last Name</b></label>
     <input type="text" placeholder="Enter Lastname" name="lname" required onChange={this.handleLastNameChange.bind(this) }/>
-     <label htmlFor="email"><b>Email</b></label>
-    <input type="email" placeholder="This will be your Username" name="uname" required onChange={this.handleLastNameChange.bind(this) }/>
+     <label><b>Email</b></label>
+    <input type="email" placeholder="This will be your Username" name="uname" required onChange={this.handleEmailChange.bind(this) }/>
 
-    <label htmlFor="dob"><b>Date Of Birth</b></label>
+    <label><b>Date Of Birth</b></label>
     <input type="date" placeholder="Enter Username" name="dob" required onChange={this.handleDobChange.bind(this) }/>
 
-    <label htmlFor="pno"><b>Phone Number</b></label>
+    <label><b>Phone Number</b></label>
     <input type="number" placeholder="Enter 10 digit phone number" name="pno" minLength="10" maxLength="10" required onChange={this.handleMobileChange.bind(this) }/>
 
-    <label htmlFor="password"><b>Password</b></label>
+    <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required onChange={this.handlePasswordChange.bind(this) } />
 
-    <label htmlFor="conpwd"><b>Confirm Password</b></label>
+    <label><b>Confirm Password</b></label>
     <input type="password" placeholder="Re-enter Password" name="conpwd" required onChange={this.handleConfirmPasswordChange.bind(this) } />
 
     {/* <label>
         <input type="checkbox" checked="checked" name="remember" required /> I accept the <p>terms and conditions</a>
       </label> */}
 
-        {this.state.error===true && (<div className="alert-danger">{this.state.errors}</div>)}
+        {this.state.error===true && (<div className="alert-danger">{this.state.errors.map(error=>error)}</div>)}
         {this.state.signupSuccess===true && (<div className="alert alert-success">Signup Success! Please Login</div>)}
     <button type="submit" className="l1">Signup</button>
     </form>

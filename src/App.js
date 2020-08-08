@@ -5,6 +5,7 @@ import Content from './components/Content';
 function App() {
   return (
     <div className="App">
+      {sessionStorage.setItem("loggedInUser","")}
       {/* <Header>This is header content</Header> */}
       {/* <Sidenav data="side data"></Sidenav> */}
       <Content></Content>
