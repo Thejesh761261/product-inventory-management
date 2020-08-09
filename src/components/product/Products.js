@@ -96,7 +96,7 @@ class Products extends React.Component {
                    <span style={{display: 'block',margin: '30px'}}>
                        Product search &nbsp;
                        <input type="search"  placeholder="Search....."  className="search" onChange={this.search} />
-                       <button className="btn btn-info" onClick={this.toggleHandler}>Toggle View</button>
+                       <button className="btn btn-info" style={{marginLeft:"20px"}} onClick={this.toggleHandler}>Toggle View</button>
                        <Link to="/addProduct"><button className="addB" >Add Product</button></Link>
                    </span>
                </div>
@@ -120,10 +120,10 @@ class Products extends React.Component {
                            return (
                              <tr>
                         
-                         <td>{product.name}</td>
-                         <td>{product.manufacturer}</td>
-                         <td>{product.category}</td>
-                         <td>{product.vendor}</td>
+                         <td>{product.name.toUpperCase()}</td>
+                         <td>{product.manufacturer.toUpperCase()}</td>
+                         <td>{product.category.toUpperCase()}</td>
+                         <td>{product.vendor.toUpperCase()}</td>
                          <td>${product.unitPrice}</td>
                          <td>{product.quantity}</td>
                          <td><input type="button" id={product.id} value="Edit" className="b1" onClick={this.editHandler} /></td>
@@ -149,10 +149,10 @@ class Products extends React.Component {
                       {/* <img class="card-img-top" src="..." alt="Card image cap"></img> */}
                       <div className="card-body">
                         {/* <h5 class="card-title">Card title</h5> */}
-                        <p className="card-text"><b>Name:</b> {product.name}</p>
-                        <p className="card-text"><b>Manufacturer:</b> {product.manufacturer}</p>
-                        <p className="card-text"><b>Category:</b> {product.category}</p>
-                        <p className="card-text"><b>Vendor: </b>{product.vendor}</p>
+                        <p className="card-text"><b>Name:</b> {product.name.toUpperCase()}</p>
+                        <p className="card-text"><b>Manufacturer:</b> {product.manufacturer.toUpperCase()}</p>
+                        <p className="card-text"><b>Category:</b> {product.category.toUpperCase()}</p>
+                        <p className="card-text"><b>Vendor: </b>{product.vendor.toUpperCase()}</p>
                         <p className="card-text"><b>Price:</b> ${product.unitPrice}</p>
                         <p className="card-text"><b>Quantity: </b>{product.quantity}</p>
                         <button className="btn btn-success b1" style={{ margin:"20px"}} id={product.id} value="Edit" onClick={this.editHandler}>Edit</button>
