@@ -16,6 +16,10 @@
 14. You can add a product by clicking on "Add Product" button.
 15. Finally click on logout when done.
 
+##Note
+
+If you want to take direct look the navigate to homepage by changing url to '/#/home' with out registration process.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
