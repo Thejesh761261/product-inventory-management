@@ -1,3 +1,22 @@
+### Project setup and use info
+
+1. Clone project.
+2. npm install.
+3. Install json-server globallly using "npm i -g json-server" command.
+4. Navigate to json-server-data folder in project and run "json-server inventory.json" command.
+5. Now navigate to project root folder and run "npm start" command.
+6. open the url in port that the app is running in (eg. http://localhost:3001/).
+7. First register yourself by clicking on register button.
+8. After successful registration use your email as "useriId" and password to login.
+9. If in homepage charts are not loaded please refresh the page.
+10. Click on products tab to view product details.
+11. You can toggle between table view and card view by clicking on "Toggle View" button.
+12. You can delete a product by clicking on "Delete" button.
+13. You can edit a product by clicking on "Edit" button.
+14. You can add a product by clicking on "Add Product" button.
+15. Finally click on logout when done.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
