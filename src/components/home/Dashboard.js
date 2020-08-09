@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../App.css';
-import stat from '../../assets/home.png';
 import Chart from 'react-google-charts';
 import axios from 'axios';
 
@@ -8,20 +7,23 @@ class Dashboard extends React.Component{
 
     state={
         products:[],
+        pieView:false,
         chart1:[
             ["category","quantity"]
+        ],
+        chart2:[
+            ["Date","Formals","Kurtas","Jeans","Sarees","Shorts","TShirts"]
         ],
         categories:[]
     }
 
-    componentDidMount=()=>{
-        this.fetchDetails();
+    componentWillMount=()=>{
+        this.fetchProductDetails();
     }
 
-    fetchDetails=()=>{
+    fetchProductDetails=()=>{
         axios.get('http://localhost:3000/products')
             .then(response=>{
-            console.log(response.data);
             this.setState({products:response.data});
             response.data.map(p=>{
                 this.state.categories.push(p.category)
@@ -53,6 +55,21 @@ class Dashboard extends React.Component{
             },error=>{
             console.log(error)
         })
+
+                axios.get('http://localhost:3000/sales')
+                    .then(response=>{
+                        console.log(response.data);
+
+                        response.data.map(s=>this.state.chart2.push([s.date,s.Formals,s.Jeans,s.Kurtas,s.Sarees,s.Shorts,s.TShirts]));
+
+                        console.log(this.state.chart2);
+                    },error=>{
+                        console.log(error);
+                    })
+    }
+
+    togglePie=()=>{
+            this.setState({togglePie:!(this.state.pieView)})
     }
 
     render()
@@ -63,21 +80,59 @@ class Dashboard extends React.Component{
             <hr/>
             {/* <img src={stat} alt="img" style={{height:' 80%',width: '80%',marginleft: '15%',margintop: '-5%',zindex: '0'}} /> */}
             <div className={"my-pretty-chart-container"}>
-        <Chart
+            <Chart
           chartType="Bar"
           loader={<div>Loading Chart</div>}
-          data={this.state.chart1}
+          data={this.state.chart2}
           options={{
             // Material design options
             chart: {
-              title: 'Present available quantity ',
-              subtitle: 'Present inventory quantity'
+              title: 'Sales of August ',
+              subtitle: 'Daily sales in August month '
             },
           }}
           width="100%"
           height="400px"
           legendToggle
         />
+         {/* <button className="btn btn-info" onClick={this.togglePie}>Change View</button> */}
+        {!this.state.pieView && (
+            <Chart
+          chartType="Bar"
+          loader={<div>Loading Chart</div>}
+          data={this.state.chart1}
+          options={{
+            
+            // Material design options
+            chart: {
+              title: 'Items in inventory ',
+              subtitle: 'Inventory quantity based on categories'
+            },
+          }}
+          width="100%"
+          height="400px"
+          legendToggle
+        />
+        )}
+        
+        {this.state.pieView && (
+
+                <Chart
+                chartType="PieChart"
+                loader={<div>Loading Chart</div>}
+                data={this.state.chart1}
+                options={{
+                is3D: true,
+                title:'Quantity of items in inventory'
+                }}
+                width="100%"
+                height="400px"
+                rootProps={{ 'data-testid': '2' }}
+                />
+
+        )}
+        
+        
       </div>
             </div>
         );

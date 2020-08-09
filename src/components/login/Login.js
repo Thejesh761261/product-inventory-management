@@ -60,7 +60,7 @@ render()
 {
     if (this.state.loginSuccess){
         this.setState({ loginSuccess: false });
-        return <Redirect to={{ pathname : "/" , state : {
+        return <Redirect to={{ pathname : "/home" , state : {
             isLoggedIn : true
         }}} />
 

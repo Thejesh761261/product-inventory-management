@@ -14,12 +14,13 @@ class Content extends React.Component {
             <div>
             {/* Content goes here */}
             <Switch>
-                <Route exact path='/' component={Homepage}></Route>    
+                <Route exact path='/' component={Login}></Route>    
                 <Route path='/products' component={Products}></Route>
                 <Route path='/register' component={Register}></Route>
                 <Route path='/login' component={Login}></Route>
                 <Route path='/addProduct' component={AddProduct}></Route>
                 <Route path='/editProduct' component={EditProduct}></Route>
+                <Route path='/home' component={Homepage}></Route>
             </Switch> 
             </div>
          );
