@@ -7,13 +7,21 @@ import Axios from 'axios';
 class AddProduct extends React.Component {
     state = { 
         pname:'',
+        nameError:false,
         pcode:'',
+        codeError:false,
         category:'',
+        categoryError:false,
         vendor:'',
+        vendorError:false,
         price:0.0,
+        priceError:false,
         quantity:0,
+        quantityError:false,
         manufacturer:'',
+        manufacutrerError:false,
         description:'',
+        descriptionError:false,
         isSuccess:false,
         categories:[]
      }
@@ -110,6 +118,7 @@ class AddProduct extends React.Component {
     <form  style={{bottom:'0px'}}>
     <label  ><b>Product Name</b></label>
     <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />
+    {this.state.priceError && (<h5>Enter valid product name</h5>)}
     <label ><b>Product Code</b></label>
     <input type="text" placeholder="Enter ProductCode" name="pcode" required onChange={this.codeChangeHandler} />
     <label htmlFor="category"><b>Category</b></label>

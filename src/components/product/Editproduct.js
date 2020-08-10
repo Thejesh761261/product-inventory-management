@@ -100,6 +100,13 @@ class EditProduct extends React.Component {
 
 
     render() { 
+        if(this.props.location.state === undefined){
+            return (
+                <div>
+                    <h1>Please navigate from products page!!!! </h1>
+                </div>
+            )
+        }
         return (
     <div>
     <InventoryHeader></InventoryHeader>

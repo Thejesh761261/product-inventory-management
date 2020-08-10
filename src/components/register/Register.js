@@ -175,28 +175,38 @@ class Register extends React.Component {
     <form onSubmit={this.handleSubmit.bind(this)}  style={{bottom:'0px'}} noValidate>
     <label><b>First Name</b></label>
     <input type="text" placeholder="Enter Firstname" name="fname" required  onChange={this.handleFirstNameChange.bind(this) }/>
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[0]}</div>)}
     <label><b>Last Name</b></label>
     <input type="text" placeholder="Enter Lastname" name="lname" required onChange={this.handleLastNameChange.bind(this) }/>
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[1]}</div>)}
      <label><b>Email</b></label>
     <input type="email" placeholder="This will be your Username" name="uname" required onChange={this.handleEmailChange.bind(this) }/>
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[5]}</div>)}
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[6]}</div>)}
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[7]}</div>)}
 
     <label><b>Date Of Birth</b></label>
     <input type="date" placeholder="Enter Username" name="dob" required onChange={this.handleDobChange.bind(this) }/>
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[2]}</div>)}
+   
 
     <label><b>Phone Number</b></label>
     <input type="number" placeholder="Enter 10 digit phone number" name="pno" minLength="10" maxLength="10" required onChange={this.handleMobileChange.bind(this) }/>
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[3]}</div>)}
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[4]}</div>)}
 
     <label><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="password" required onChange={this.handlePasswordChange.bind(this) } />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[8]}</div>)}
 
     <label><b>Confirm Password</b></label>
     <input type="password" placeholder="Re-enter Password" name="conpwd" required onChange={this.handleConfirmPasswordChange.bind(this) } />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors[9]}</div>)}
 
     {/* <label>
         <input type="checkbox" checked="checked" name="remember" required /> I accept the <p>terms and conditions</a>
       </label> */}
 
-        {this.state.error===true && (<div className="alert-danger">{this.state.errors.map(error=>error)}</div>)}
         {this.state.signupSuccess===true && (<div className="alert alert-success">Signup Success! Please Login</div>)}
     <button type="submit" className="l1">Signup</button>
     </form>
