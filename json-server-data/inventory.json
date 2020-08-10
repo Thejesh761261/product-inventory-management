@@ -27,7 +27,7 @@
       "code": "AVA512",
       "name": "Avasaa kurta",
       "unitPrice": 250,
-      "quantity": 20,
+      "quantity": 240,
       "category": "Kurtas",
       "vendor": "Meera Fashions",
       "manufacturer": "AVASAA",
@@ -38,7 +38,7 @@
       "name": "Nike Trousers",
       "category": "Kurtas",
       "vendor": "Meera Fashions",
-      "unitPrice": 200,
+      "unitPrice": 400,
       "manufacturer": "Manyavar",
       "description": "Women Multicoloured Floral Kurta",
       "quantity": 123,
@@ -49,7 +49,7 @@
       "name": "Levi's Blue Jeans",
       "category": "Jeans",
       "vendor": "Tayab Manch Fashions Traders",
-      "unitPrice": 150,
+      "unitPrice": 550,
       "manufacturer": "Levi's",
       "description": "Slim fit jeans in Planet Blue Color",
       "quantity": 123,
@@ -60,10 +60,10 @@
       "name": "Highlander Jeans",
       "category": "Jeans",
       "vendor": "Fajim Traders",
-      "unitPrice": 120,
+      "unitPrice": 320,
       "manufacturer": "HIGHLANDER",
       "description": "Mid-Rise clean look stretchable jeans",
-      "quantity": 23,
+      "quantity": 263,
       "id": 17
     },
     {
@@ -74,7 +74,7 @@
       "unitPrice": 250,
       "manufacturer": "ROADSTER",
       "description": "Men Charcoal Grey Skinny Fit",
-      "quantity": 44,
+      "quantity": 424,
       "id": 18
     },
     {
@@ -85,7 +85,7 @@
       "unitPrice": 200,
       "manufacturer": "Anand haandlooms",
       "description": "Blue & Golden Woven Banarasi Saree",
-      "quantity": 21,
+      "quantity": 281,
       "id": 20
     },
     {
@@ -96,7 +96,7 @@
       "unitPrice": 320,
       "manufacturer": "Hitesh Sarees",
       "description": "Color Black Fashion Cotton Saree",
-      "quantity": 23,
+      "quantity": 283,
       "id": 21
     },
     {
@@ -107,7 +107,7 @@
       "unitPrice": 350,
       "manufacturer": "Mitra Handlooms",
       "description": "Black Embroidered Poly Georgette",
-      "quantity": 21,
+      "quantity": 271,
       "id": 22
     },
     {
@@ -118,7 +118,7 @@
       "unitPrice": 325,
       "manufacturer": "Highlander",
       "description": "Mens Black Sports Shorts",
-      "quantity": 22,
+      "quantity": 222,
       "id": 23
     },
     {
@@ -129,7 +129,7 @@
       "unitPrice": 400,
       "manufacturer": "Van Heusen",
       "description": "Van Heusen Blue Tshirt for men",
-      "quantity": 54,
+      "quantity": 354,
       "id": 24
     },
     {

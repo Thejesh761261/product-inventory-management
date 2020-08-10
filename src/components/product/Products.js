@@ -110,7 +110,7 @@ class Products extends React.Component {
                          <th>Category</th>
                          <th>Vendor</th>
                          <th>Price per unit</th>
-                         <th>Available Quantity</th>
+                         <th>Available Stock</th>
                          <th></th>
                          <th></th>
                        </tr>
