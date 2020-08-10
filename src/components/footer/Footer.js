@@ -4,7 +4,7 @@ class Footer extends React.Component {
     state = {  }
     render() { 
         return ( 
-            <span>Footer</span>
+            <div className="footer">@Inventory Management</div>
          );
     }
 }

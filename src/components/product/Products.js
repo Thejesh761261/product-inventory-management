@@ -65,7 +65,7 @@ class Products extends React.Component {
         else{
         this.setState({searchValue: value});
         let searchProd=this.state.tempProducts.filter(p=>{
-          return p.name.toLowerCase().match(value.toLowerCase())||p.vendor.toLowerCase().match(value.toLowerCase())||p.category.toLowerCase().match(value.toLowerCase());
+          return p.name.toLowerCase().match(value.toLowerCase())||p.vendor.toLowerCase().match(value.toLowerCase())||p.category.toLowerCase().match(value.toLowerCase())||p.manufacturer.toLowerCase().match(value.toLowerCase());
         })
         this.setState({products:searchProd});
       }
@@ -165,8 +165,8 @@ class Products extends React.Component {
                </div>
       
            )}
-       
         </div>
+       
           
      
          );

@@ -35,7 +35,7 @@
     },
     {
       "code": "AVA234",
-      "name": "Nike Trousers",
+      "name": "Kurtas for women",
       "category": "Kurtas",
       "vendor": "Meera Fashions",
       "unitPrice": 400,
@@ -118,7 +118,7 @@
       "unitPrice": 325,
       "manufacturer": "Highlander",
       "description": "Mens Black Sports Shorts",
-      "quantity": 222,
+      "quantity": 210,
       "id": 23
     },
     {
@@ -142,6 +142,28 @@
       "description": "PUMA Men Round Neck Dark Blue T-Shirt",
       "quantity": 512,
       "id": 25
+    },
+    {
+      "code": "RDSTR3124",
+      "name": "Roadster Jeans",
+      "category": "Jeans",
+      "vendor": "Mahin Fashions",
+      "unitPrice": 340,
+      "manufacturer": "Roadster",
+      "description": "Roadster jeans blue",
+      "quantity": 245,
+      "id": 27
+    },
+    {
+      "code": "PUMA4423",
+      "name": "PUMA SHORTS",
+      "category": "Shorts",
+      "vendor": "Fajim fashions",
+      "unitPrice": 523,
+      "manufacturer": "PUMA",
+      "description": "Puma Shorts Navi Blue",
+      "quantity": 45,
+      "id": 29
     }
   ],
   "sales": [
@@ -295,18 +317,18 @@
       "id": 2
     },
     {
-      "email": "swathi@gmail.com",
-      "password": "swathi123",
-      "name": "Swathi S",
-      "dob": "2020-05-07",
-      "id": 3
-    },
-    {
       "email": "thsths@gmail.com",
       "password": "thsths",
       "name": "Thej K",
       "dob": "2020-06-11",
       "id": 4
+    },
+    {
+      "email": "thejeshh@gmail.com",
+      "password": "thejesh",
+      "name": "Thejesh K",
+      "dob": "2019-07-04",
+      "id": 5
     }
   ]
 }

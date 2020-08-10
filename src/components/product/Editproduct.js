@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import InventoryHeader from '../header/InventoryHeader';
 import SideNav from '../sideNavbar/Sidenav';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 class EditProduct extends React.Component {
@@ -137,7 +138,8 @@ class EditProduct extends React.Component {
     <label ><b>Description</b></label>
     <input type="text" placeholder="Enter Description" name="desc" value={this.state.description} required onChange={this.descChangeHandler} />
         
-    <button type="submit" className="l1" onClick={this.editProduct}>Edit Product</button>
+    <button type="submit" className="btn btn-success" onClick={this.editProduct}>Edit Product</button>
+       {/* <Link to="/products"> <button  className="btn btn-info">Cancel</button></Link> */}
     </form>
     </div>
 </div>

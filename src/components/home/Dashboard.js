@@ -12,7 +12,7 @@ class Dashboard extends React.Component{
             ["category","quantity"]
         ],
         chart2:[
-            ["Date","Formals","Kurtas","Jeans","Sarees","Shorts","TShirts"]
+            ["Date","Formals","Kurtas","Jeans","Sarees","Shorts","T-Shirts"]
         ],
         categories:[]
     }

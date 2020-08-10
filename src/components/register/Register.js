@@ -25,48 +25,61 @@ function validate(state) {
     console.log("in errors");
     console.log(state);
     const errors = [];
+    
+    
   
     if (state.firstName === "") {
 
-        errors.push("First name is required")
+        errors.push("First name is required");
+        state.errors1["fn"]="First name is required";
     }
     if (state.lastName === "") {
 
         errors.push("Last name is required")
+        state.errors1["ln"]="Last name is required";
     }
     if (state.dob === "" || state.dob === '0001-01-01') {
 
-        errors.push("DOB is required")
+        errors.push("DOB is required");
+        state.errors1["dob"]="DOB required";
+
     }
     if (state.mobile === "") {
 
-        errors.push("Mobile Number is required")
+        errors.push("Mobile Number is required");
+        state.errors1["ph"]="Phone number is required";
     }
     if (state.mobile.length < 10 || state.mobile.length > 10) {
 
         errors.push("Mobile Number should be of 10 digits")
+        state.errors1["phl"]="Mobile Number should be of 10 digits";
     }
     if (state.email.length < 5) {
 
         errors.push("Email should be at least 5 charcters long");
+        state.errors1["em1"]="Email should be at least 5 charcters long";
     }
     if (state.email.split("").filter(x => x === "@").length !== 1) {
 
         errors.push("Email should contain a @");
+        state.errors1["em2"]="Email should contain @";
     }
     if (state.email.indexOf(".") === -1) {
 
         errors.push("Email should contain at least one dot");
+        state.errors1["em3"]="Email should contain at least one dot";
     }
 
     if (state.password.length < 6 ) {
 
         errors.push("Password should be at least 6 characters long");
+        state.errors1["pwd"]="Password should be atleast 6 characters long"
     }
 
     if (state.password !== state.confirmpassword ) {
 
         errors.push("Password and Confirm password should be same");
+        state.errors1["cpwd"]="Password and Confirm password should be same"
     }
 
     return errors;
@@ -77,7 +90,6 @@ class Register extends React.Component {
         this.state = {
             email: '',
             password: '',
-            hiddenPassword: true,
             signupSuccess: false,
             signupError: false,
             firstName: '',
@@ -86,21 +98,26 @@ class Register extends React.Component {
             mobile: '',
             confirmpassword:'',
             error:false,
-            errors:[]
+            errors1:{}
+         
         }
 
     }
     handleEmailChange = (eve) => {
         console.log(eve.target.value)
         this.setState({ email: eve.target.value });
+        this.setState({errors1:{}})
     }
     handlePasswordChange = (e) => {
         this.setState({ password: e.target.value });
+        this.setState({errors1:{}})
     }
     handleConfirmPasswordChange = (e) => {
         this.setState({ confirmpassword: e.target.value });
+        this.setState({errors1:{}})
     }
     handleFirstNameChange = (e) => {
+        this.setState({errors1:{}})
         if (e.target.value.match("^[A-Za-z]*$") != null) {
             this.setState({ firstName: e.target.value })
         }
@@ -110,18 +127,18 @@ class Register extends React.Component {
 
     }
     handleLastNameChange = (ev) => {
+        this.setState({errors1:{}})
         if (ev.target.value.match("^[A-Za-z]*$") != null) {
             this.setState({ lastName: ev.target.value })
         }
     }
     handleDobChange = (e) => {
         this.setState({ dob: e.target.value })
+        this.setState({errors1:{}})
     }
     handleMobileChange = (event) => {
         this.setState({ mobile: event.target.value })
-    }
-    togglePassword = (e) => {
-        this.setState({ hiddenPassword: !this.state.hiddenPassword });
+        this.setState({errors1:{}})
     }
      
         handleSubmit(event)
@@ -174,39 +191,40 @@ class Register extends React.Component {
     <hr/>
     <form onSubmit={this.handleSubmit.bind(this)}  style={{bottom:'0px'}} noValidate>
     <label><b>First Name</b></label>
-    <input type="text" placeholder="Enter Firstname" name="fname" required  onChange={this.handleFirstNameChange.bind(this) }/>
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[0]}</div>)} */}
+    <input type="text" placeholder="Enter Firstname" name="fname" required  onChange={this.handleFirstNameChange.bind(this)} />
+    <div className="invalid-feedback">Please provide Name</div>
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["fn"]}</div>)}
     <label><b>Last Name</b></label>
-    <input type="text" placeholder="Enter Lastname" name="lname" required onChange={this.handleLastNameChange.bind(this) }/>
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[1]}</div>)} */}
+    <input type="text" placeholder="Enter Lastname" name="lname" required onChange={this.handleLastNameChange.bind(this)} />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["ln"]}</div>)}
      <label><b>Email</b></label>
-    <input type="email" placeholder="This will be your Username" name="uname" required onChange={this.handleEmailChange.bind(this) }/>
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[5]}</div>)}
-    {this.state.error===true && (<div className="alert-danger">{this.state.errors[6]}</div>)}
-    {this.state.error===true && (<div className="alert-danger">{this.state.errors[7]}</div>)} */}
+    <input type="email" placeholder="This will be your Username" name="uname" required onChange={this.handleEmailChange.bind(this)} />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["em1"]}</div>)}
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["em2"]}</div>)}
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["em3"]}</div>)}
 
     <label><b>Date Of Birth</b></label>
-    <input type="date" placeholder="Enter Username" name="dob" required onChange={this.handleDobChange.bind(this) }/>
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[2]}</div>)} */}
+    <input type="date" placeholder="Enter Username" name="dob" required onChange={this.handleDobChange.bind(this)} />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["dob"]}</div>)}
    
 
     <label><b>Phone Number</b></label>
-    <input type="number" placeholder="Enter 10 digit phone number" name="pno" minLength="10" maxLength="10" required onChange={this.handleMobileChange.bind(this) }/>
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[3]}</div>)}
-    {this.state.error===true && (<div className="alert-danger">{this.state.errors[4]}</div>)} */}
+    <input type="number" placeholder="Enter 10 digit phone number" name="pno" minLength="10" maxLength="10" required onChange={this.handleMobileChange.bind(this)} />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["ph"]}</div>)}
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["ph1"]}</div>)}
 
     <label><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required onChange={this.handlePasswordChange.bind(this) } />
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[8]}</div>)} */}
+    <input type="password" placeholder="Enter Password" name="password" required onChange={this.handlePasswordChange.bind(this)} />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["pwd"]}</div>)}
 
     <label><b>Confirm Password</b></label>
-    <input type="password" placeholder="Re-enter Password" name="conpwd" required onChange={this.handleConfirmPasswordChange.bind(this) } />
-    {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors[9]}</div>)} */}
+    <input type="password" placeholder="Re-enter Password" name="conpwd" required onChange={this.handleConfirmPasswordChange.bind(this)} />
+    {this.state.error===true && (<div className="alert-danger">{this.state.errors1["cpwd"]}</div>)}
 
     {/* <label>
         <input type="checkbox" checked="checked" name="remember" required /> I accept the <p>terms and conditions</a>
       </label> */}
-        {this.state.error===true && (<div className="alert-danger">{this.state.errors.map(m=>m)}</div>)}
+        {/* {this.state.error===true && (<div className="alert-danger">{this.state.errors.map(m=>m)}</div>)} */}
         {this.state.signupSuccess===true && (<div className="alert alert-success">Signup Success! Please Login</div>)}
     <button type="submit" className="l1">Signup</button>
     </form>
