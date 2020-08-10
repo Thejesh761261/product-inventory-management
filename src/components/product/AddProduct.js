@@ -27,7 +27,7 @@ class AddProduct extends React.Component {
      }
 
      validate(){
-         if(this.state.pname==='' || this.state.pname.match("^[A-Za-z]*$") != null){
+         if(this.state.pname===''){
             this.setState({nameError:true})
          }
          if(this.state.pcode===''){

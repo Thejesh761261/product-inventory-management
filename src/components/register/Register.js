@@ -209,7 +209,7 @@ class Register extends React.Component {
    
 
     <label><b>Phone Number</b></label>
-    <input type="number" placeholder="Enter 10 digit phone number" name="pno" minLength="10" maxLength="10" required onChange={this.handleMobileChange.bind(this)} />
+    <input type="number" placeholder="Enter 10 digit phone number" name="pno" minLength="10" maxLength="10" required="true" onChange={this.handleMobileChange.bind(this)} />
     {this.state.error===true && (<div className="alert-danger">{this.state.errors1["ph"]}</div>)}
     {this.state.error===true && (<div className="alert-danger">{this.state.errors1["ph1"]}</div>)}
 

@@ -17,9 +17,11 @@ class Dashboard extends React.Component{
         categories:[]
     }
 
-    componentWillMount=()=>{
+    componentDidMount=()=>{
+        console.log("cdm");
         this.fetchProductDetails();
     }
+
 
     fetchProductDetails=()=>{
         axios.get('http://localhost:3000/products')
@@ -78,7 +80,6 @@ class Dashboard extends React.Component{
              <div>
             <h2 style={{zindex: '3',marginleft:'15%'}} className="he1">Inventory Dashboard</h2>
             <hr/>
-            {/* <img src={stat} alt="img" style={{height:' 80%',width: '80%',marginleft: '15%',margintop: '-5%',zindex: '0'}} /> */}
             <h3>Current Month Sales Analysis</h3>
             <div className={"my-pretty-chart-container"}>
             <Chart
