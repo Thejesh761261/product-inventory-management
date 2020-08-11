@@ -2,7 +2,6 @@ import React from 'react';
 import '../../App.css';
 import InventoryHeader from '../header/InventoryHeader';
 import SideNav from '../sideNavbar/Sidenav';
-import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 class EditProduct extends React.Component {
@@ -114,9 +113,6 @@ class EditProduct extends React.Component {
     <SideNav></SideNav>
     <h3 className="he1">Edit Product</h3>
     <hr/>
-    <div style={{textAlign:"center"}}>
-        { this.state.isSuccess && (<h3 className="alert-sucess" style={{backgroundColor:"green",color:"white"}}>Product edited successfully</h3>) }
-    </div>
     <div className="c2">
     <form  style={{bottom:'0px'}}>
     <label  ><b>Product Name</b></label>
@@ -141,6 +137,9 @@ class EditProduct extends React.Component {
     <button type="submit" className="btn btn-success" onClick={this.editProduct}>Edit Product</button>
        {/* <Link to="/products"> <button  className="btn btn-info">Cancel</button></Link> */}
     </form>
+    </div>
+    <div style={{textAlign:"center"}}>
+        { this.state.isSuccess && (<h3 className="alert-sucess" style={{backgroundColor:"green",color:"white"}}>Product edited successfully</h3>) }
     </div>
 </div>
           );

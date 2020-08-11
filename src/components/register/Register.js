@@ -185,7 +185,7 @@ class Register extends React.Component {
 
         return (<React.Fragment>
     <Header></Header>
-    <div className="container c1" style={{width:'30%',align:'center'}}>
+    <div className="container cr" style={{align:'center'}}>
 
     <h3 className="he1">User Signup</h3>
     <hr/>

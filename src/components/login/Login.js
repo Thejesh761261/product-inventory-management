@@ -71,7 +71,7 @@ render()
 <div>
   <Header></Header>
   </div >
-<div className="container c1" style={{width:'30%',align:'center'}}>
+<div className="container c1" style={{align:'center'}}>
 <h2 className="he1">User Login</h2>
 <hr/>
 {this.state.error && (<h4 className="alert alert-danger">Please enter valid username and password</h4>)}

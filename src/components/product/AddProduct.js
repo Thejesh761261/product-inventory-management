@@ -154,51 +154,50 @@ class AddProduct extends React.Component {
     <SideNav></SideNav>
     <h3 className="he1">Add Product</h3>
     <hr/>
-    <div style={{textAlign:"center"}}>
-        { this.state.isSuccess && (<h3 className="alert-sucess" style={{backgroundColor:"green",color:"white"}}>Product added successfully</h3>) }
-    </div>
-   
     <div className="c2">
-    <form  style={{bottom:'0px'}}>
-    <label  htmlFor="pname"><b>Product Name</b></label>
-    <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />
-    {this.state.nameError && (<h5 className="alert alert-danger">Enter valid product name</h5>)}
-    <label htmlFor="pcode"><b>Product Code</b></label>
-    <input type="text" placeholder="Enter ProductCode" name="pcode" required onChange={this.codeChangeHandler} />
-    {this.state.codeError && (<h5 className="alert alert-danger">Enter valid product code</h5>)}
-    <label htmlFor="category"><b>Category</b></label>
-    <select name="Category" id="category" className="form-control" onChange={this.categoryChangeHandler}>
-    {this.state.categories.map((s, i) => (
-        <option key={i} defaultValue=' ' value={s}>
-        {s}
-        </option>
-        ))}
-</select><br></br>
-    {this.state.categoryError && (<h5 className="alert alert-danger">Enter valid category</h5>)}
-    {/* <input type="select" placeholder="Category" name="category" required onChange={this.categoryChangeHandler} /> */}
-    <label><b>Vendor</b></label>
-    <input type="text" placeholder="Enter Vendor name" name="vendor" required onChange={this.vendorChangeHandler} />
-    {this.state.vendorError && (<h5 className="alert alert-danger">Enter valid vendor name</h5>)}
-    <label><b>Unit Price</b></label>
-    <input type="text" placeholder="Unit Price value" name="uprice" required onChange={this.priceChangeHandler} />
-    {this.state.priceError && (<h5 className="alert alert-danger">Enter valid price</h5>)}
-    <label><b>Quantity</b></label>
-    <input type="text" placeholder="Initial Quantity" name="quantity" required onChange={this.quantityChangeHandler} />
 
-    {this.state.quantityError && (<h5 className="alert alert-danger">Enter valid quantity</h5>)}
+        <form  style={{bottom:'0px'}}>
+        <label  htmlFor="pname"><b>Product Name</b></label>
+        <input type="text" placeholder="Enter Productname" name="pname" required  onChange={this.nameChangeHandler} />
+        {this.state.nameError && (<h5 className="alert alert-danger">Enter valid product name</h5>)}
+        <label htmlFor="pcode"><b>Product Code</b></label>
+        <input type="text" placeholder="Enter ProductCode" name="pcode" required onChange={this.codeChangeHandler} />
+        {this.state.codeError && (<h5 className="alert alert-danger">Enter valid product code</h5>)}
+        <label htmlFor="category"><b>Category</b></label>
+        <select name="Category" id="category" className="form-control" onChange={this.categoryChangeHandler}>
+        {this.state.categories.map((s, i) => (
+            <option key={i} defaultValue=' ' value={s}>
+            {s}
+            </option>
+            ))}
+        </select><br></br>
+        {this.state.categoryError && (<h5 className="alert alert-danger">Enter valid category</h5>)}
+        {/* <input type="select" placeholder="Category" name="category" required onChange={this.categoryChangeHandler} /> */}
+        <label><b>Vendor</b></label>
+        <input type="text" placeholder="Enter Vendor name" name="vendor" required onChange={this.vendorChangeHandler} />
+        {this.state.vendorError && (<h5 className="alert alert-danger">Enter valid vendor name</h5>)}
+        <label><b>Unit Price</b></label>
+        <input type="text" placeholder="Unit Price value" name="uprice" required onChange={this.priceChangeHandler} />
+        {this.state.priceError && (<h5 className="alert alert-danger">Enter valid price</h5>)}
+        <label><b>Quantity</b></label>
+        <input type="text" placeholder="Initial Quantity" name="quantity" required onChange={this.quantityChangeHandler} />
 
-    <label ><b>Manufacturer</b></label>
-    <input type="text" placeholder="Enter Manufacturer name" name="manufacturer" required onChange={this.manufacturerChangeHandler} />
-    {this.state.manufacturerError && (<h5 className="alert alert-danger">Enter valid manufacturer name</h5>)}
+        {this.state.quantityError && (<h5 className="alert alert-danger">Enter valid quantity</h5>)}
 
-    <label ><b>Description</b></label>
-    <input type="text" placeholder="Enter Description" name="desc" required onChange={this.descChangeHandler} />
-    {this.state.descriptionError && (<h5 className="alert alert-danger">Enter valid product description</h5>)}
-        
-    <button type="submit" className="l1" onClick={this.addProduct.bind(this)}>Add Product</button>
-    </form>
+        <label ><b>Manufacturer</b></label>
+        <input type="text" placeholder="Enter Manufacturer name" name="manufacturer" required onChange={this.manufacturerChangeHandler} />
+        {this.state.manufacturerError && (<h5 className="alert alert-danger">Enter valid manufacturer name</h5>)}
+
+        <label ><b>Description</b></label>
+        <input type="text" placeholder="Enter Description" name="desc" required onChange={this.descChangeHandler} />
+        {this.state.descriptionError && (<h5 className="alert alert-danger">Enter valid product description</h5>)}
+            
+        <button type="submit" className="l1" onClick={this.addProduct.bind(this)}>Add Product</button>
+        </form>
     </div>
-   
+    <div style={{textAlign:"center"}}>
+             { this.state.isSuccess && (<h3 className="alert-sucess" style={{backgroundColor:"green",color:"white"}}>Product added successfully</h3>) }
+         </div>
 </div>
           );
     }

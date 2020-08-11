@@ -39,7 +39,7 @@ class Dashboard extends React.Component{
             quantity=this.state.products.filter(p=>p.category===c)
             console.log(quantity);
             let temp=0;
-            let sum=quantity.map(q=>{
+            quantity.map(q=>{
                  temp=q.quantity+temp;
             },0);
 
@@ -77,7 +77,7 @@ class Dashboard extends React.Component{
     render()
     {
         return(
-             <div className="container">
+             <div className="container dashboard">
             <h2 style={{zindex: '3',marginleft:'15%'}} className="he1">Inventory Dashboard</h2>
             <hr/>
             <h3>Current Month Sales Analysis</h3>
