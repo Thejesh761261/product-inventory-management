@@ -93,10 +93,10 @@ class Products extends React.Component {
                        <h2 className="he1">Product Details</h2>
                        <hr></hr>
                    </span>
-                   <span style={{display: 'block',margin: '30px'}}>
+                   <span style={{display: 'block',margin: '3rem'}}>
                        Product search &nbsp;
                        <input type="search"  placeholder="Search....."  className="search" onChange={this.search} />
-                       <button className="btn btn-info" style={{marginLeft:"20px"}} onClick={this.toggleHandler}>Toggle View</button>
+                       <button className="btn btn-info" style={{marginLeft:"2rem"}} onClick={this.toggleHandler}>Toggle View</button>
                        <Link to="/addProduct"><button className="addB" >Add Product</button></Link>
                    </span>
                </div>
@@ -155,7 +155,7 @@ class Products extends React.Component {
                         <p className="card-text"><b>Vendor: </b>{product.vendor.toUpperCase()}</p>
                         <p className="card-text"><b>Price:</b> ${product.unitPrice}</p>
                         <p className="card-text"><b>Quantity: </b>{product.quantity}</p>
-                        <button className="btn btn-success b1" style={{ margin:"20px"}} id={product.id} value="Edit" onClick={this.editHandler}>Edit</button>
+                        <button className="btn btn-success b1" style={{ margin:"2rem"}} id={product.id} value="Edit" onClick={this.editHandler}>Edit</button>
                         <button className="btn btn-success b1" id={product.id} value="Delete" onClick={this.deleteProduct}>Delete</button>
                       </div>
                   </div>

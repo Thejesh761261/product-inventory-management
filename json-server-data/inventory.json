@@ -12,15 +12,15 @@
       "id": 3
     },
     {
-      "id": 4,
       "code": "PUMA435",
       "name": "Puma Trousers",
-      "unitPrice": 154,
-      "quantity": 200,
       "category": "Formals",
-      "vendor": "Myna Traders",
+      "vendor": "Mahin Fashions",
+      "unitPrice": 154,
       "manufacturer": "PUMA",
-      "description": "Mens black formal pants"
+      "description": "Mens black formal pants",
+      "quantity": 200,
+      "id": 4
     },
     {
       "id": 9,

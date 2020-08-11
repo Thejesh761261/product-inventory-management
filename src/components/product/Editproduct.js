@@ -126,7 +126,7 @@ class EditProduct extends React.Component {
      <label><b>Category</b></label>
     <input type="text" placeholder="Category" name="category" value={this.state.category} required onChange={this.categoryChangeHandler} />
     <label><b>Vendor</b></label>
-    <input type="text" placeholder="Enter Vendor name" name="vendor" value={this.state.vendor} required onChange={this.vendorChangeHandler} />
+    <input type="text" placeholder="Enter Vendor name" name="vendor" value={this.state.vendor} required="required" onChange={this.vendorChangeHandler} />
     <label><b>Unit Price</b></label>
     <input type="number" placeholder="Unit Price value" name="uprice" value={this.state.price} required onChange={this.priceChangeHandler} />
     <label><b>Quantity</b></label>
