@@ -10,10 +10,14 @@ class Products extends React.Component {
     state = { 
         products:[],
         tempProducts:[],
+        multiSearchProducts:[],
         editId:0,
         editClicked:false,
         searchValue:'',
-        tableView:true
+        tableView:true,
+        categories:[],
+        manufacturer:[],
+        products1:[]
      }
 
      componentDidMount(){
@@ -26,11 +30,28 @@ class Products extends React.Component {
             console.log(response.data);
             this.setState({products:response.data});
             this.setState({tempProducts:response.data});
+            this.setState({multiSearchProducts:response.data});
+            this.getCategories();
+            this.getManufacturers();
             console.log(this.state.tempProducts);
           },error=>{
             console.log(error)
           })
      }
+
+     getCategories(){
+        this.state.products.map(p=>this.state.categories.push(p.category));
+        let arr= this.state.categories.filter((value, index, self) => self.indexOf(value) === index)
+        this.setState({categories:arr});
+        console.log(arr);  
+     }
+
+     getManufacturers(){
+      this.state.products.map(p=>this.state.manufacturer.push(p.manufacturer));
+      let arr= this.state.manufacturer.filter((value, index, self) => self.indexOf(value) === index)
+      this.setState({manufacturer:arr});
+      console.log(arr);  
+   }
 
      deleteProduct=(event)=>{
         console.log(event.target.id);
@@ -56,7 +77,40 @@ class Products extends React.Component {
       this.setState({editClicked:true})
      }
 
+     categoryChangeHandler=(e)=>{
+      document.getElementById("manufacturer").value="Choose Manufacturer";
+      let value = e.target.value;
+      if(value==="Choose Category"){
+        this.fetchProductDetails();
+      }else{
+        let searchProd=this.state.multiSearchProducts.filter(p=>{
+          return p.category.toLowerCase().match(value.toLowerCase());
+        })
+        // this.setState({multiSearchProducts:searchProd},()=>console.log(this.state.multiSearchProducts))
+        this.setState({products:searchProd});
+        this.setState({products1:searchProd});
+      }
+
+     }
+
+     manufacturerChangeHandler=(e)=>{
+      let value = e.target.value;
+      let fullProducts = this.state.products1;
+      console.log(fullProducts);
+      if(value==="Choose Manufacturer"){
+        this.fetchProductDetails();
+      }else{
+        let searchProd=fullProducts.filter(p=>{
+          return p.manufacturer.toLowerCase().match(value.toLowerCase());
+        })
+        // this.setState({multiSearchProducts:searchProd})
+        this.setState({products:searchProd},()=>console.log(this.state.products));
+      }
+     }
+
      search=(e)=>{
+      document.getElementById("manufacturer").value="Choose Manufacturer";
+      document.getElementById("category").value="Choose Category";
         let value=e.target.value;
         if(value==''){
           this.fetchProductDetails();
@@ -83,11 +137,11 @@ class Products extends React.Component {
       }
         return ( 
           
-            <div  >
+            <div style={{overflowY: "auto"}}>
      
         <InventoryHeader></InventoryHeader>
             <SideNav></SideNav>
-               <div className="container">
+               <div className="" style={{marginLeft:"16%",marginRight:"2%"}}>
                <div > 
                    <span>
                        <h2 className="he1">Product Details</h2>
@@ -96,7 +150,24 @@ class Products extends React.Component {
                    <span style={{display: 'block',margin: '3rem'}}>
                        Product search &nbsp;
                        <input type="search"  placeholder="Search....."  className="search" onChange={this.search} />
+                       <select name="Category" id="category" className="form-control" style={{width:"15rem",display:"inline"}} onChange={this.categoryChangeHandler}>
+                       <option value="Choose Category">Choose Category</option>
+                          {this.state.categories.map((s, i) => (
+                              <option key={i} defaultValue='' value={s}>
+                              {s}
+                              </option>
+                              ))}
+                          </select><br></br>
+                       <select name="Manufacturer" id="manufacturer" className="form-control" style={{width:"15rem",display:"inline"}} onChange={this.manufacturerChangeHandler}>
+                       <option value="Choose Manufacturer">Choose Manufacturer</option>
+                          {this.state.manufacturer.map((s, i) => (
+                              <option key={i} defaultValue='' value={s}>
+                              {s}
+                              </option>
+                              ))}
+                          </select><br></br>
                        <button className="btn btn-info" style={{marginLeft:"2rem"}} onClick={this.toggleHandler}>Toggle View</button>
+
                        <Link to="/addProduct"><button className="addB" >Add Product</button></Link>
                    </span>
                </div>
@@ -119,15 +190,14 @@ class Products extends React.Component {
                          {this.state.products.map(product=>{
                            return (
                              <tr>
-                        
-                         <td>{product.name.toUpperCase()}</td>
-                         <td>{product.manufacturer.toUpperCase()}</td>
-                         <td>{product.category.toUpperCase()}</td>
-                         <td>{product.vendor.toUpperCase()}</td>
-                         <td>${product.unitPrice}</td>
-                         <td>{product.quantity}</td>
-                         <td><input type="button" id={product.id} value="Edit" className="b1" onClick={this.editHandler} /></td>
-                         <td><input type="button" id={product.id} value="Delete" className="b1" onClick={this.deleteProduct} /></td>
+                                <td>{product.name.toUpperCase()}</td>
+                                <td>{product.manufacturer.toUpperCase()}</td>
+                                <td>{product.category.toUpperCase()}</td>
+                                <td>{product.vendor.toUpperCase()}</td>
+                                <td>${product.unitPrice}</td>
+                                <td>{product.quantity}</td>
+                                <td><input type="button" id={product.id} value="Edit" className="b1" onClick={this.editHandler} /></td>
+                                <td><input type="button" id={product.id} value="Delete" className="b1" onClick={this.deleteProduct} /></td>
                        </tr>
                     
                            )

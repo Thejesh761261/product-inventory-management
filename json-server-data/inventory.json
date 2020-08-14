@@ -61,7 +61,7 @@
       "category": "Jeans",
       "vendor": "Fajim Traders",
       "unitPrice": 320,
-      "manufacturer": "HIGHLANDER",
+      "manufacturer": "Highlander",
       "description": "Mid-Rise clean look stretchable jeans",
       "quantity": 263,
       "id": 17
@@ -72,7 +72,7 @@
       "category": "Jeans",
       "vendor": "Saradha Traders",
       "unitPrice": 250,
-      "manufacturer": "ROADSTER",
+      "manufacturer": "Roadster",
       "description": "Men Charcoal Grey Skinny Fit",
       "quantity": 424,
       "id": 18
@@ -83,7 +83,7 @@
       "category": "Sarees",
       "vendor": "Anand Traders",
       "unitPrice": 200,
-      "manufacturer": "Anand haandlooms",
+      "manufacturer": "Anand handlooms",
       "description": "Blue & Golden Woven Banarasi Saree",
       "quantity": 281,
       "id": 20
@@ -329,6 +329,20 @@
       "name": "Thejesh K",
       "dob": "2019-07-04",
       "id": 5
+    },
+    {
+      "email": "thejesh@gmail.com",
+      "password": "thejesh19",
+      "name": "Thejesh Kanuparthi",
+      "dob": "2020-03-11",
+      "id": 6
+    },
+    {
+      "email": "thejesh@gmail.com",
+      "password": "thejesh19",
+      "name": "Thejesh Kanuparthi",
+      "dob": "2020-03-11",
+      "id": 7
     }
   ]
 }

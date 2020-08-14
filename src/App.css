@@ -62,7 +62,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
             width:30%;
             padding:3% 3% 0% 3%;
             border: 3px solid #f1f1f1;
-            margin: 30px 30% 0 35%;
+            margin: 6% 30% 0 35%;
         }
 
         @media screen and (max-width:700px){
@@ -81,7 +81,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
           width:30%;
           padding:3% 3% 0% 3%;
           border: 3px solid #f1f1f1;
-          margin: 30px 30% 0 35%;
+          margin: 6% 30% 0 35%;
       }
 
       @media screen and (max-width:900px){
@@ -344,4 +344,19 @@ body {font-family: Arial, Helvetica, sans-serif;}
       padding: 15px;
       height: 20%;
       position: sticky;
+    }
+
+    .scroll{
+      position: "fixed";
+      overflow: "hide";
+      overflow-x: "auto";
+      overflow-y: "scroll";
+    }
+
+    tbody{
+      scroll-snap-type: y mandatory;
+    }
+
+    tr{
+      scroll-snap-align: end;
     }
