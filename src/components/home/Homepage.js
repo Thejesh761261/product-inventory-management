@@ -33,11 +33,11 @@ render()
     return (
         <div>
             <InventoryHeader></InventoryHeader>
-            <SideNav></SideNav>
-        <div className="container">
+            <SideNav style={{marginTop:"-10px"}}></SideNav>
+             <span style={{marginLeft:"16%",marginRight:"2%",marginTop:"1%"}}>
            {/* {this.comp()} */}
            <Dashboard></Dashboard>
-        </div>
+        </span>
     </div>
        
     )

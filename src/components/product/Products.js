@@ -141,15 +141,18 @@ class Products extends React.Component {
      
         <InventoryHeader></InventoryHeader>
             <SideNav></SideNav>
-               <div className="" style={{marginLeft:"16%",marginRight:"2%"}}>
+            
+               <div className="" style={{marginLeft:"16%",marginRight:"2%",marginTop:"1%"}}>
                <div > 
                    <span>
                        <h2 className="he1">Product Details</h2>
                        <hr></hr>
                    </span>
-                   <span style={{display: 'block',margin: '3rem'}}>
+                  
+                   <span style={{display: 'inline block',margin: '3rem'}}>
+                   
                        Product search &nbsp;
-                       <input type="search"  placeholder="Search....."  className="search" onChange={this.search} />
+                       <input type="search"  placeholder="Search....."  className="search" onChange={this.search} />&nbsp;
                        <select name="Category" id="category" className="form-control" style={{width:"15rem",display:"inline"}} onChange={this.categoryChangeHandler}>
                        <option value="Choose Category">Choose Category</option>
                           {this.state.categories.map((s, i) => (
@@ -157,7 +160,7 @@ class Products extends React.Component {
                               {s}
                               </option>
                               ))}
-                          </select><br></br>
+                          </select>&nbsp;
                        <select name="Manufacturer" id="manufacturer" className="form-control" style={{width:"15rem",display:"inline"}} onChange={this.manufacturerChangeHandler}>
                        <option value="Choose Manufacturer">Choose Manufacturer</option>
                           {this.state.manufacturer.map((s, i) => (
@@ -165,7 +168,8 @@ class Products extends React.Component {
                               {s}
                               </option>
                               ))}
-                          </select><br></br>
+                          </select>
+                          
                        <button className="btn btn-info" style={{marginLeft:"2rem"}} onClick={this.toggleHandler}>Toggle View</button>
 
                        <Link to="/addProduct"><button className="addB" >Add Product</button></Link>
@@ -182,6 +186,8 @@ class Products extends React.Component {
                          <th>Vendor</th>
                          <th>Price per unit</th>
                          <th>Available Stock</th>
+                         {/* <th>Size</th> */}
+                         <th>Color</th>
                          <th></th>
                          <th></th>
                        </tr>
@@ -196,6 +202,8 @@ class Products extends React.Component {
                                 <td>{product.vendor.toUpperCase()}</td>
                                 <td>${product.unitPrice}</td>
                                 <td>{product.quantity}</td>
+                                {/* <td>{product.size}</td> */}
+                                <td><div style={{backgroundColor:product.color,borderRadius:"50%",height:"1rem",width:"1rem"}}></div></td>
                                 <td><input type="button" id={product.id} value="Edit" className="b1" onClick={this.editHandler} /></td>
                                 <td><input type="button" id={product.id} value="Delete" className="b1" onClick={this.deleteProduct} /></td>
                        </tr>
@@ -225,6 +233,7 @@ class Products extends React.Component {
                         <p className="card-text"><b>Vendor: </b>{product.vendor.toUpperCase()}</p>
                         <p className="card-text"><b>Price:</b> ${product.unitPrice}</p>
                         <p className="card-text"><b>Quantity: </b>{product.quantity}</p>
+                        <p className="card-text"><b>Color: </b>{product.color}</p>
                         <button className="btn btn-success b1" style={{ margin:"2rem"}} id={product.id} value="Edit" onClick={this.editHandler}>Edit</button>
                         <button className="btn btn-success b1" id={product.id} value="Delete" onClick={this.deleteProduct}>Delete</button>
                       </div>
